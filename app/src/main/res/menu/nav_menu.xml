@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_home"
+        android:icon="@drawable/ic_baseline_home_24"
+        android:title="হোম" />
+    <item
+        android:id="@+id/menu_chasabad"
+        android:icon="@drawable/chasabad"
+        android:title="চাষাবাদ পদ্বতি"/>
+
+    <item
+        android:id="@+id/menu_instrument"
+        android:icon="@drawable/ic_baseline_call_24"
+        android:title="কৃষি যন্ত্রপাতি" />
+
+    <item
+        android:id="@+id/menu_amr_foshol"
+        android:icon="@drawable/ic_baseline_call_24"
+        android:title="আমার ফসল" />
+    <item
+        android:id="@+id/menu_marketing"
+        android:icon="@drawable/marketing"
+        android:title="বাজারজাতকরন" />
+
+    <item
+        android:id="@+id/menu_weather"
+        android:icon="@drawable/weather"
+        android:title="আবহাওয়া"/>
+
+
+    <item
+        android:id="@+id/menu_setting"
+        android:icon="@drawable/ic_baseline_settings_24"
+        android:title="সেটিংস" />
+</menu>
