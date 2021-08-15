@@ -9,12 +9,14 @@ import androidx.fragment.app.Fragment;
 
 public class krishi_instrument extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
 
     public krishi_instrument() {
         // Required empty public constructor
     }
+
+    // back button on toolbar
+
+
 
 
     @Override

@@ -1,19 +1,29 @@
 package com.example.adunik_krishi;
 
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
 import com.google.android.material.navigation.NavigationView;
+
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
 
 import static com.example.adunik_krishi.R.id.toolbar;
 
@@ -31,9 +41,9 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        // navigation Drawer
         nav = findViewById(R.id.nav_menu);
         drawerLayout = findViewById(R.id.drawer);
-
         toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.open, R.string.close);
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
@@ -53,7 +63,6 @@ public class MainActivity extends AppCompatActivity {
                         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                         fragmentTransaction.replace(R.id.mainActivityLayout,home,"homeFragment");
                         fragmentTransaction.commit();
-
                         drawerLayout.closeDrawer(GravityCompat.START);
                         break;
 
@@ -98,5 +107,31 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             }
         });
+
+
+
+
+        // slide show or last part of home page
+
+        //time and date
+        TextView timeANDdate = findViewById(R.id.time);
+        SimpleDateFormat   TimeFromat = new SimpleDateFormat("HH:mm:ss:aa");
+        SimpleDateFormat   DateFromat = new SimpleDateFormat("dd:MM:yyyy");
+        String dateTime = TimeFromat.format(new Date()).toString() + "\n"+ DateFromat.format(new Date());
+        timeANDdate.setText(dateTime);
+
     }
+
+   // cancel dialog message shoow
+    @Override
+    public void onBackPressed() {
+        new AlertDialog.Builder(this)
+                .setMessage("Are you sure you want to exit?").setCancelable(false)
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        MainActivity.super.onBackPressed();
+                    }
+                }) .setNegativeButton("No", null).show();
+    }
+
 }

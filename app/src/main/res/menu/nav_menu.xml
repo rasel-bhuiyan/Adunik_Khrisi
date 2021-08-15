@@ -6,17 +6,18 @@
         android:title="হোম" />
     <item
         android:id="@+id/menu_chasabad"
-        android:icon="@drawable/chasabad"
         android:title="চাষাবাদ পদ্বতি"/>
+<item
+        android:id="@+id/menu_Fish"
+        android:title="মৎস্য চাষ পদ্বতি"/>
 
     <item
         android:id="@+id/menu_instrument"
-        android:icon="@drawable/ic_baseline_call_24"
         android:title="কৃষি যন্ত্রপাতি" />
 
     <item
         android:id="@+id/menu_amr_foshol"
-        android:icon="@drawable/ic_baseline_call_24"
+        android:icon="@drawable/chasabad"
         android:title="আমার ফসল" />
     <item
         android:id="@+id/menu_marketing"
