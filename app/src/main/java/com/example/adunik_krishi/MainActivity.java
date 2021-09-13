@@ -52,8 +52,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
-
-
                 switch (item.getItemId()) {
                     case R.id.menu_home:
                         Toast.makeText(getApplicationContext(), "Home panel is open", Toast.LENGTH_SHORT).show();
@@ -108,18 +106,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
-
-
-        // slide show or last part of home page
-
-        //time and date
-        TextView timeANDdate = findViewById(R.id.time);
-        SimpleDateFormat   TimeFromat = new SimpleDateFormat("HH:mm:ss:aa");
-        SimpleDateFormat   DateFromat = new SimpleDateFormat("dd:MM:yyyy");
-        String dateTime = TimeFromat.format(new Date()).toString() + "\n"+ DateFromat.format(new Date());
-        timeANDdate.setText(dateTime);
-
     }
 
    // cancel dialog message shoow
@@ -134,4 +120,15 @@ public class MainActivity extends AppCompatActivity {
                 }) .setNegativeButton("No", null).show();
     }
 
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Home home = new Home();
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.mainActivityLayout,home,"homeFragment");
+        fragmentTransaction.commit();
+        drawerLayout.closeDrawer(GravityCompat.START);
+    }
 }
