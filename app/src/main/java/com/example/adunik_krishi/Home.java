@@ -1,5 +1,6 @@
 package com.example.adunik_krishi;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -49,6 +50,8 @@ public class Home extends Fragment implements View.OnClickListener {
         switch (v.getId()) {
             case R.id.H_chasabad:
 
+                Intent intentChasabadPoddoti = new Intent(getActivity(),ChasabadPoddoti.class);
+                startActivity(intentChasabadPoddoti);
 
                 break;
             case R.id.h_fishChash:
