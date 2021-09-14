@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Adunik_Krishi">
-        <activity android:name=".ChasabadPoddoti"></activity>
+        <activity android:name=".DanChasa"></activity>
+        <activity android:name=".FishCahsabad" />
+        <activity android:name=".ChasabadPoddoti" />
         <activity android:name=".text" />
         <activity android:name=".MainActivity">
             <intent-filter>

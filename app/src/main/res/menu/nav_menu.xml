@@ -6,10 +6,10 @@
         android:title="হোম" />
     <item
         android:id="@+id/menu_chasabad"
-        android:title="চাষাবাদ পদ্বতি"/>
-<item
+        android:title="চাষাবাদ পদ্বতি" />
+    <item
         android:id="@+id/menu_Fish"
-        android:title="মৎস্য চাষ পদ্বতি"/>
+        android:title="মৎস্য চাষ পদ্বতি" />
 
     <item
         android:id="@+id/menu_instrument"
@@ -27,8 +27,11 @@
     <item
         android:id="@+id/menu_weather"
         android:icon="@drawable/weather"
-        android:title="আবহাওয়া"/>
+        android:title="আবহাওয়া" />
 
+    <item
+        android:id="@+id/menu_profile"
+        android:title="প্রোফাইল"></item>
 
     <item
         android:id="@+id/menu_setting"

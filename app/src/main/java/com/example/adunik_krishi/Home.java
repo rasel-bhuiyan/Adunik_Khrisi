@@ -23,8 +23,7 @@ public class Home extends Fragment implements View.OnClickListener {
     CardView chasabad, mosshoChas;
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View HomeView = inflater.inflate(R.layout.fragment_home, container, false);
         // time and date
@@ -52,11 +51,11 @@ public class Home extends Fragment implements View.OnClickListener {
 
                 Intent intentChasabadPoddoti = new Intent(getActivity(),ChasabadPoddoti.class);
                 startActivity(intentChasabadPoddoti);
-
                 break;
+
             case R.id.h_fishChash:
-
-
+                Intent intentFishchasabadPoddoti = new Intent(getActivity(),FishCahsabad.class);
+                startActivity(intentFishchasabadPoddoti);
                 break;
         }
 
