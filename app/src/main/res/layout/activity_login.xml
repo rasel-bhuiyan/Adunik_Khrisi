@@ -25,8 +25,8 @@
         android:layout_marginBottom="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter your Email"
-        android:inputType="textEmailAddress"/>
+        android:hint="আপনার ফোন নম্বর"
+        android:inputType="phone"/>
 
     <EditText
         android:id="@+id/passwordET"

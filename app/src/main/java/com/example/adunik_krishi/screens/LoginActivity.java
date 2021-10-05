@@ -19,6 +19,8 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -93,7 +95,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void forget_password(View view) {
-        startActivity(new Intent(LoginActivity.this,ForgetPasswordActivity.class));
+        startActivity(new Intent(LoginActivity.this, OTPActivity.class));
     }
 
     @Override
@@ -103,6 +105,7 @@ public class LoginActivity extends AppCompatActivity {
         if(currentUser != null){
             reload();
         }
+
     }
 
     private void reload() {

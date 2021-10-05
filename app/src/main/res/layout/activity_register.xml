@@ -22,33 +22,37 @@
         android:id="@+id/nameET"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="20dp"
+        android:layout_margin="20dp"
         android:layout_marginBottom="10dp"
-        android:hint="Enter your Name"
+        android:hint="আপনার নাম"
         android:inputType="textPersonName"
         android:minHeight="48dp" />
 
     <EditText
-        android:id="@+id/emailET"
+        android:id="@+id/phoneET"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="20dp"
+        android:layout_margin="20dp"
         android:layout_marginBottom="10dp"
-        android:hint="Enter your Email"
-        android:inputType="textEmailAddress"
+        android:hint="আপনার ফোন নম্বর"
+        android:inputType="phone"
+        android:minHeight="48dp" />
+
+    <EditText
+        android:id="@+id/cityET"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:layout_marginBottom="10dp"
+        android:hint="আপনার জেলা"
+        android:inputType="text"
         android:minHeight="48dp" />
 
     <EditText
         android:id="@+id/passwordET"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="20dp"
+        android:layout_margin="20dp"
         android:layout_marginBottom="10dp"
         android:hint="Password"
         android:inputType="textPassword"
