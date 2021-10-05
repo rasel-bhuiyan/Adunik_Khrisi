@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "818024958241",
+    "project_id": "adhunik-krishi",
+    "storage_bucket": "adhunik-krishi.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:818024958241:android:48da1915357806af8d9660",
+        "android_client_info": {
+          "package_name": "com.example.adunik_krishi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "818024958241-ji3vu470aab8vo2189fida85sj9fok5r.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.adunik_krishi",
+            "certificate_hash": "b0de5238b1925763d5facd244194c01212e5d086"
+          }
+        },
+        {
+          "client_id": "818024958241-lk82n2v8i1n7s0q7d17kdufl7mvakk5j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAmAxHiGLNCm9nFIlxKE0ECAbTX8P5nIFc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "818024958241-lk82n2v8i1n7s0q7d17kdufl7mvakk5j.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

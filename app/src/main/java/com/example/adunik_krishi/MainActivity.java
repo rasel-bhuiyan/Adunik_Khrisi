@@ -19,7 +19,10 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
+import com.example.adunik_krishi.screens.LoginActivity;
+import com.example.adunik_krishi.screens.RegisterActivity;
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.FirebaseAuth;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -98,6 +101,12 @@ public class MainActivity extends AppCompatActivity {
 
                     case R.id.menu_setting:
                         Toast.makeText(MainActivity.this, "setting", Toast.LENGTH_SHORT).show();
+                        drawerLayout.closeDrawer(GravityCompat.START);
+                        break;
+                    case R.id.menu_logout:
+                        FirebaseAuth.getInstance().signOut();
+                        startActivity(new Intent(MainActivity.this, LoginActivity.class)
+                                .setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK));
                         drawerLayout.closeDrawer(GravityCompat.START);
                         break;
                 }

@@ -9,17 +9,25 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Adunik_Krishi">
-        <activity android:name=".DanChasa"></activity>
-        <activity android:name=".FishCahsabad" />
-        <activity android:name=".ChasabadPoddoti" />
-        <activity android:name=".text" />
-        <activity android:name=".MainActivity">
+        <activity
+            android:name=".screens.ForgetPasswordActivity"
+            android:exported="true"
+            android:parentActivityName=".screens.LoginActivity"/>
+        <activity
+            android:name=".screens.RegisterActivity"
+            android:exported="true"
+            android:parentActivityName=".screens.LoginActivity"/>
+        <activity
+            android:name=".screens.LoginActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".text" />
+        <activity android:name=".MainActivity"></activity>
     </application>
 
 </manifest>
