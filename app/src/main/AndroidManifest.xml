@@ -2,8 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.adunik_krishi">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -12,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Adunik_Krishi">
         <activity
-            android:name=".screens.OTPActivity"
+            android:name=".screens.ForgetPasswordActivity"
             android:exported="true"
             android:parentActivityName=".screens.LoginActivity"/>
         <activity
@@ -29,7 +27,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".text" />
-        <activity android:name=".MainActivity" />
+        <activity android:name=".MainActivity"></activity>
     </application>
 
 </manifest>

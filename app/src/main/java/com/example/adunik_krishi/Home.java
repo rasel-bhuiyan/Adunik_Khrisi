@@ -6,7 +6,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
@@ -48,13 +50,13 @@ public class Home extends Fragment implements View.OnClickListener {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.H_chasabad:
+                Toast.makeText(getActivity(), "chasabad", Toast.LENGTH_SHORT).show();
+                Intent intentChasha = new Intent(getActivity().getApplication(),ChasabadPoddoti.class);
+                startActivity(intentChasha);
 
-                Intent intentChasabadPoddoti = new Intent(getActivity(),ChasabadPoddoti.class);
-                startActivity(intentChasabadPoddoti);
-                break;
-
+              break;
             case R.id.h_fishChash:
-                Intent intentFishchasabadPoddoti = new Intent(getActivity(),FishCahsabad.class);
+                Intent intentFishchasabadPoddoti = new Intent(getActivity().getApplication(),FishCahsabad.class);
                 startActivity(intentFishchasabadPoddoti);
                 break;
         }
