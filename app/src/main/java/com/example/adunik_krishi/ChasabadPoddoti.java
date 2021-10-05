@@ -30,8 +30,7 @@ public class ChasabadPoddoti extends AppCompatActivity implements View.OnClickLi
                 startActivity(intentDanchash);
                 break;
             case R.id.C_WheatChash:
-                Intent intentWheatChash = new Intent(getApplicationContext(),DanChasa.class);
-                startActivity(intentWheatChash);
+
                 break;
 
         }

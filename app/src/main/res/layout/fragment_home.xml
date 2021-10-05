@@ -115,7 +115,7 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight=".80"
                                 android:gravity="center"
-                                android:text="চাষাবাদ পদ্বতি"
+                                android:text="ফসল চাষ পদ্বতি"
                                 android:textStyle="bold"
                                 android:textSize="20sp"
                                 android:textColor="@color/black"></TextView>

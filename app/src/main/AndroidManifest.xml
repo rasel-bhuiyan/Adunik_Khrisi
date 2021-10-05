@@ -28,6 +28,13 @@
         </activity>
         <activity android:name=".text" />
         <activity android:name=".MainActivity"></activity>
+
+        <activity android:name=".ChasabadPoddoti"></activity>
+        <activity android:name=".FishCahsabad"></activity>
+        <activity android:name=".DanChasa"></activity>
+
+
+
     </application>
 
 </manifest>
