@@ -1,0 +1,507 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:background="#FFFAE3"
+
+    android:orientation="vertical"
+    tools:context=".ChasabadPoddoti">
+
+
+    <!-- this is toolbar -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#1E36DA"
+        app:title="চাষাবাদ পদ্বতি"
+        app:titleTextColor="#FFF9F9">
+    </androidx.appcompat.widget.Toolbar>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:elevation="10dp"
+        app:cardBackgroundColor="#ffff"
+        app:cardCornerRadius="10dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="আপনার ফসল নির্বাচন করুন "
+            android:textAlignment="center"
+            android:textColor="#008C00"
+            android:textSize="18sp"
+            android:textStyle="bold|italic"></TextView>
+
+    </androidx.cardview.widget.CardView>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+       android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <!--                1st row -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/C_Danchash"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    android:elevation="10dp"
+                    app:cardBackgroundColor="#FCFDFD"
+                    app:cardCornerRadius="5dp"
+                    >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            xmlns:app="http://schemas.android.com/apk/res-auto"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@mipmap/ic_launcher"
+                            app:civ_border_width="2dp"
+                            app:civ_border_color="#49C527"
+                            android:layout_weight=".25"/>
+
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight=".75"
+                            android:gravity="center"
+                            android:text="ধান চাষ পদ্বতি"
+                            android:textStyle="bold"
+                            android:textSize="20sp"
+                            android:textColor="@color/black"></TextView>
+
+                    </LinearLayout>
+
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/C_WheatChash"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    android:elevation="10dp"
+                    app:cardBackgroundColor="#DFFFFFFF"
+                    app:cardCornerRadius="5dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            xmlns:app="http://schemas.android.com/apk/res-auto"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@mipmap/fish"
+                            app:civ_border_width="2dp"
+                            app:civ_border_color="#49C527"
+                            android:layout_weight=".25"/>
+
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight=".75"
+                            android:gravity="center"
+                            android:text="গম চাষ"
+                            android:textStyle="bold"
+                            android:textSize="20sp"
+                            android:textColor="@color/black"></TextView>
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+
+            <!--                2nd row -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/C_PotatoChash"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    android:elevation="10dp"
+                    app:cardBackgroundColor="#FCFDFD"
+                    app:cardCornerRadius="5dp"
+                    >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            xmlns:app="http://schemas.android.com/apk/res-auto"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@mipmap/ic_launcher"
+                            app:civ_border_width="2dp"
+                            app:civ_border_color="#49C527"
+                            android:layout_weight=".25"/>
+
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight=".75"
+                            android:gravity="center"
+                            android:text="আলু চাষ পদ্বতি"
+                            android:textStyle="bold"
+                            android:textSize="20sp"
+                            android:textColor="@color/black"></TextView>
+
+                    </LinearLayout>
+
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/C_Eggplant"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    android:elevation="10dp"
+                    app:cardBackgroundColor="#DFFFFFFF"
+                    app:cardCornerRadius="5dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            xmlns:app="http://schemas.android.com/apk/res-auto"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@mipmap/fish"
+                            app:civ_border_width="2dp"
+                            app:civ_border_color="#49C527"
+                            android:layout_weight=".25"/>
+
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight=".75"
+                            android:gravity="center"
+                            android:text="বেগুন চাষ পদ্বতি"
+                            android:textStyle="bold"
+                            android:textSize="20sp"
+                            android:textColor="@color/black"></TextView>
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+
+            <!--                3rd row -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/C_JuteChasahbad"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    android:elevation="10dp"
+                    app:cardBackgroundColor="#FCFDFD"
+                    app:cardCornerRadius="5dp"
+                    >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            xmlns:app="http://schemas.android.com/apk/res-auto"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@mipmap/ic_launcher"
+                            app:civ_border_width="2dp"
+                            app:civ_border_color="#49C527"
+                            android:layout_weight=".25"/>
+
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight=".75"
+                            android:gravity="center"
+                            android:text="পাট চাষ
+"
+                            android:textStyle="bold"
+                            android:textSize="20sp"
+                            android:textColor="@color/black"></TextView>
+
+                    </LinearLayout>
+
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/C_CornChash"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    android:elevation="10dp"
+                    app:cardBackgroundColor="#DFFFFFFF"
+                    app:cardCornerRadius="5dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            xmlns:app="http://schemas.android.com/apk/res-auto"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@mipmap/fish"
+                            app:civ_border_width="2dp"
+                            app:civ_border_color="#49C527"
+                            android:layout_weight=".25"/>
+
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight=".75"
+                            android:gravity="center"
+                            android:text="ভুট্টা চাষ "
+                            android:textStyle="bold"
+                            android:textSize="20sp"
+                            android:textColor="@color/black"></TextView>
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+
+            <!--               4th row -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/C_MustardChash"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    android:elevation="10dp"
+                    app:cardBackgroundColor="#FCFDFD"
+                    app:cardCornerRadius="5dp"
+                    >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            xmlns:app="http://schemas.android.com/apk/res-auto"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@mipmap/ic_launcher"
+                            app:civ_border_width="2dp"
+                            app:civ_border_color="#49C527"
+                            android:layout_weight=".25"/>
+
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight=".75"
+                            android:gravity="center"
+                            android:text="সরিষা চাষ
+"
+                            android:textStyle="bold"
+                            android:textSize="20sp"
+                            android:textColor="@color/black"></TextView>
+
+                    </LinearLayout>
+
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/C_SugarcaneChash"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    android:elevation="10dp"
+                    app:cardBackgroundColor="#DFFFFFFF"
+                    app:cardCornerRadius="5dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            xmlns:app="http://schemas.android.com/apk/res-auto"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@mipmap/fish"
+                            app:civ_border_width="2dp"
+                            app:civ_border_color="#49C527"
+                            android:layout_weight=".25"/>
+
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight=".75"
+                            android:gravity="center"
+                            android:text="আখ চাষ "
+                            android:textStyle="bold"
+                            android:textSize="20sp"
+                            android:textColor="@color/black"></TextView>
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+
+            <!--               5th row -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/C_SesameChash"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    android:elevation="10dp"
+                    app:cardBackgroundColor="#FCFDFD"
+                    app:cardCornerRadius="5dp"
+                    >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            xmlns:app="http://schemas.android.com/apk/res-auto"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@mipmap/ic_launcher"
+                            app:civ_border_width="2dp"
+                            app:civ_border_color="#49C527"
+                            android:layout_weight=".25"/>
+
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight=".75"
+                            android:gravity="center"
+                            android:text="তিল চাষ
+"
+                            android:textStyle="bold"
+                            android:textSize="20sp"
+                            android:textColor="@color/black"></TextView>
+
+                    </LinearLayout>
+
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/C_SybeanChash"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    android:elevation="10dp"
+                    app:cardBackgroundColor="#DFFFFFFF"
+                    app:cardCornerRadius="5dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            xmlns:app="http://schemas.android.com/apk/res-auto"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@mipmap/fish"
+                            app:civ_border_width="2dp"
+                            app:civ_border_color="#49C527"
+                            android:layout_weight=".25"/>
+
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight=".75"
+                            android:gravity="center"
+                            android:text="সয়াবিন চাষ "
+                            android:textStyle="bold"
+                            android:textSize="20sp"
+                            android:textColor="@color/black"></TextView>
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
