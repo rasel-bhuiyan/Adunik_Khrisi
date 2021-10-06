@@ -1,8 +1,17 @@
 package com.example.adunik_krishi;
 
+import android.Manifest;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.location.Address;
+import android.location.Geocoder;
+import android.location.Location;
+import android.location.LocationManager;
+import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -12,6 +21,7 @@ import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.app.ActivityCompat;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.FragmentManager;
@@ -19,16 +29,32 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+import com.example.adunik_krishi.constant.Constant;
 import com.example.adunik_krishi.screens.LoginActivity;
 import com.example.adunik_krishi.screens.RegisterActivity;
+import com.example.adunik_krishi.screens.WeatherActivity;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 
+import java.io.IOException;
+import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
+import java.util.Locale;
 
 import static com.example.adunik_krishi.R.id.toolbar;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -43,6 +69,9 @@ public class MainActivity extends AppCompatActivity {
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        getLocationPermission();
+
 
         // navigation Drawer
         nav = findViewById(R.id.nav_menu);
@@ -95,7 +124,7 @@ public class MainActivity extends AppCompatActivity {
                         break;
 
                     case R.id.menu_weather:
-                        Toast.makeText(MainActivity.this, "Weather", Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(MainActivity.this, WeatherActivity.class));
                         drawerLayout.closeDrawer(GravityCompat.START);
                         break;
 
@@ -117,7 +146,16 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-   // cancel dialog message shoow
+    private void getLocationPermission() {
+
+        String[] permissions = {Manifest.permission.ACCESS_COARSE_LOCATION};
+
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_DENIED) {
+            requestPermissions(permissions,1);
+        }
+    }
+
+    // cancel dialog message shoow
     @Override
     public void onBackPressed() {
         new AlertDialog.Builder(this)

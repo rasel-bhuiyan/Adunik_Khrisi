@@ -83,6 +83,7 @@ public class LoginActivity extends AppCompatActivity {
 
                             if(user.getPassword().equals(password)){
 
+                                isNumberFound = true;
                                 reload();
 
                             }
@@ -134,9 +135,6 @@ public class LoginActivity extends AppCompatActivity {
         startActivity(new Intent(LoginActivity.this,RegisterActivity.class));
     }
 
-    public void forget_password(View view) {
-        startActivity(new Intent(LoginActivity.this, OTPActivity.class));
-    }
 
     @Override
     protected void onStart() {
