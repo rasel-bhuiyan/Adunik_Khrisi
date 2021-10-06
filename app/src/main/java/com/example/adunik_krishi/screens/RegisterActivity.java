@@ -32,10 +32,10 @@ public class RegisterActivity extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
 
-    public static final String NAME = "name";
-    public static final String PHONE = "phone";
-    public static final String CITY = "city";
-    public static final String PASSWORD = "password";
+    public static final String NAME = "names";
+    public static final String PHONE = "phones";
+    public static final String CITY = "cities";
+    public static final String PASSWORD = "passwords";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Adunik_Krishi">
         <activity
-            android:name=".screens.ForgetPasswordActivity"
+            android:name=".screens.OTPActivity"
             android:exported="true"
             android:parentActivityName=".screens.LoginActivity"/>
         <activity

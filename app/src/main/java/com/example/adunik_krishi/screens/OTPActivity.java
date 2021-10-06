@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.CountDownTimer;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -15,6 +14,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.adunik_krishi.R;
+import com.example.adunik_krishi.constant.Constant;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
@@ -163,17 +163,15 @@ public class OTPActivity extends AppCompatActivity {
 
         String uID = mAuth.getCurrentUser().getUid();
 
-        Toast.makeText(OTPActivity.this, ""+uID, Toast.LENGTH_SHORT).show();
-
-        DatabaseReference dataRef = databaseReference.child("users").child(uID);
-
         HashMap<String,Object> dataMap = new HashMap<>();
+
         dataMap.put("uID",uID);
         dataMap.put("phone",phone);
         dataMap.put("name",name);
         dataMap.put("city",city);
+        dataMap.put("password",password);
 
-        dataRef.setValue(dataMap).addOnCompleteListener(new OnCompleteListener<Void>() {
+        databaseReference.child(uID).setValue(dataMap).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                 if(task.isSuccessful()){
@@ -205,7 +203,7 @@ public class OTPActivity extends AppCompatActivity {
         statusTV = findViewById(R.id.statusTV);
 
         mAuth = FirebaseAuth.getInstance();
-        databaseReference = FirebaseDatabase.getInstance().getReference();
+        databaseReference = FirebaseDatabase.getInstance(Constant.DATABASE_REFERENCE).getReference("users");
 
         phone = getIntent().getStringExtra(RegisterActivity.PHONE);
         name = getIntent().getStringExtra(RegisterActivity.NAME);

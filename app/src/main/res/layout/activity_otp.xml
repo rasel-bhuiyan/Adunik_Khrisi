@@ -63,7 +63,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
         android:layout_marginTop="20dp"
-        android:text="OTP এর জন্য অপেক্ষা করুন ।"
+        android:text="OTP এর জন্য ২ মিনিট অপেক্ষা করুন ।"
         android:textAlignment="center"
         android:textColor="#004D40" />
 
