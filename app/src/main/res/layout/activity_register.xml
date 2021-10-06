@@ -38,7 +38,7 @@
         android:inputType="phone"
         android:minHeight="48dp" />
 
-    <EditText
+    <Spinner
         android:id="@+id/cityET"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

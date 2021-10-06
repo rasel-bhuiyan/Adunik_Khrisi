@@ -7,9 +7,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.example.adunik_krishi.MainActivity;
@@ -25,7 +28,8 @@ import java.util.concurrent.TimeUnit;
 
 public class RegisterActivity extends AppCompatActivity {
 
-    private EditText nameET, phoneET,cityET,passwordET;
+    private EditText nameET, phoneET,passwordET;
+    private Spinner cityET;
     private Button registerBTN;
     private ProgressBar loadingBar;
     private String name,phone,city,password;
@@ -37,12 +41,30 @@ public class RegisterActivity extends AppCompatActivity {
     public static final String CITY = "cities";
     public static final String PASSWORD = "passwords";
 
+    String[] cities = {"কুমিল্লা", "ফেনী", "ব্রাহ্মণবাড়িয়া", "রাঙ্গামাটি", "নোয়াখালী", "চাঁদপুর", "লক্ষ্মীপুর", "চট্টগ্রাম", "কক্সবাজার", "খাগড়াছড়ি", "বান্দরবান",
+            "সিরাজগঞ্জ", "পাবনা", "বগুড়া", "রাজশাহী", "নাটোর", "জয়পুরহাট", "চাঁপাইনবাবগঞ্জ", "নওগাঁ","যশোর", "সাতক্ষীরা", "মেহেরপুর", "নড়াইল",
+            "চুয়াডাঙ্গা", "কুষ্টিয়া", "মাগুরা", "খুলনা", "বাগেরহাট", "ঝিনাইদহ", "ঝালকাঠি", "পটুয়াখালী", "পিরোজপুর", "বরিশাল", "ভোলা", "বরগুনা",
+            "সিলেট", "মৌলভীবাজার", "হবিগঞ্জ", "সুনামগঞ্জ", "নরসিংদী", "গাজীপুর", "শরীয়তপুর", "নারায়ণগঞ্জ", "টাঙ্গাইল", "কিশোরগঞ্জ",
+            "মানিকগঞ্জ", "ঢাকা", "মুন্সিগঞ্জ", "রাজবাড়ী", "মাদারীপুর", "গোপালগঞ্জ", "ফরিদপুর",	"পঞ্চগড়", "দিনাজপুর", "লালমনিরহাট",
+            "নীলফামারী", "গাইবান্ধা", "ঠাকুরগাঁও", "রংপুর", "কুড়িগ্রাম", "শেরপুর", "ময়মনসিংহ", "জামালপুর", "নেত্রকোণা"};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
         initialize();
+
+        cityET.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                city = cities[position];
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
 
         registerBTN.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -51,7 +73,6 @@ public class RegisterActivity extends AppCompatActivity {
                 name = nameET.getText().toString();
                 phone = phoneET.getText().toString();
                 password = passwordET.getText().toString();
-                city = cityET.getText().toString();
 
                 if(name.isEmpty()){
                     Toast.makeText(RegisterActivity.this, "Enter your name", Toast.LENGTH_SHORT).show();
@@ -92,6 +113,15 @@ public class RegisterActivity extends AppCompatActivity {
         loadingBar = findViewById(R.id.loadingBar);
 
         mAuth = FirebaseAuth.getInstance();
+
+        setSpinner();
+    }
+
+    private void setSpinner() {
+
+        ArrayAdapter arrayAdapter = new ArrayAdapter(this,R.layout.support_simple_spinner_dropdown_item,cities);
+        arrayAdapter.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item);
+        cityET.setAdapter(arrayAdapter);
     }
 
     public void sign_in(View view) {

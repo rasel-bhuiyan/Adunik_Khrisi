@@ -32,6 +32,7 @@ public class LoginActivity extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
     private DatabaseReference databaseReference;
+    boolean isNumberFound = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,26 +71,36 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if(snapshot.exists()){
+
+                    isNumberFound = false;
+
                     for(DataSnapshot data: snapshot.getChildren()){
 
                         User user = data.getValue(User.class);
 
                         if(user.getPhone().equals(phone)){
 
-                            Toast.makeText(LoginActivity.this, ""+user.getPhone(), Toast.LENGTH_SHORT).show();
 
                             if(user.getPassword().equals(password)){
-
-                                Toast.makeText(LoginActivity.this, ""+user.getPassword(), Toast.LENGTH_SHORT).show();
 
                                 reload();
 
                             }
                             else {
+                                isNumberFound = true;
                                 Toast.makeText(LoginActivity.this, "আপনার দেয়া Password টি ভুল", Toast.LENGTH_SHORT).show();
+                                loadingBar.setVisibility(View.INVISIBLE);
+                                loginBTN.setVisibility(View.VISIBLE);
                             }
                         }
                     }
+
+                    if(!isNumberFound){
+                        loadingBar.setVisibility(View.INVISIBLE);
+                        loginBTN.setVisibility(View.VISIBLE);
+                        Toast.makeText(LoginActivity.this, "এই নম্বরে ফোন Account পাওয়া যায় নি", Toast.LENGTH_SHORT).show();
+                    }
+
 
                 }
                 else{
