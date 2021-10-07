@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F3EAC2"
+
+    android:orientation="vertical"
+    tools:context=".DanChas">
+
+    <!-- this is toolbar -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#1E36DA"
+        app:title="ধান চাষ পদ্বতি"
+        app:titleTextColor="#FFF9F9"></androidx.appcompat.widget.Toolbar>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="66dp"
+        android:background="@color/black"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/DanChas_prokria"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="চাষ প্রক্রিয়া"
+            android:textColor="#23AE29"
+            android:textSize="25sp"
+            android:textStyle="bold"></Button>
+
+        <Button
+            android:id="@+id/Dan_rogbalai"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="রোগবালাই"
+            android:textColor="#23AE29"
+            android:textSize="25sp"
+            android:textStyle="bold"></Button>
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/Dan_chas_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:src="@drawable/img_Dan"></ImageView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="dakfj choas skdfsdfks"
+                android:textColor="#0FBD35"
+                android:textStyle="bold"
+                ></TextView>
+
+
+
+            <!-- end layout -->
+        </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>

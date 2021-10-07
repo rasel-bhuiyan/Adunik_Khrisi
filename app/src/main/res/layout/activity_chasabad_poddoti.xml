@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="center"
-    android:background="#FFFAE3"
+    android:background="#EDE5C2"
 
     android:orientation="vertical"
     tools:context=".ChasabadPoddoti">
@@ -18,8 +18,7 @@
         android:layout_height="50dp"
         android:background="#1E36DA"
         app:title="চাষাবাদ পদ্বতি"
-        app:titleTextColor="#FFF9F9">
-    </androidx.appcompat.widget.Toolbar>
+        app:titleTextColor="#FFF9F9"></androidx.appcompat.widget.Toolbar>
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -30,7 +29,8 @@
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
+            android:drawableEnd="@drawable/ic_baseline_search_24"
             android:gravity="center"
             android:text="আপনার ফসল নির্বাচন করুন "
             android:textAlignment="center"
@@ -41,13 +41,12 @@
     </androidx.cardview.widget.CardView>
 
 
-
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-       android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        >
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -69,8 +68,7 @@
                     android:layout_weight="1"
                     android:elevation="10dp"
                     app:cardBackgroundColor="#FCFDFD"
-                    app:cardCornerRadius="5dp"
-                    >
+                    app:cardCornerRadius="5dp">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -80,10 +78,10 @@
                         <de.hdodenhof.circleimageview.CircleImageView
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
+                            android:layout_weight=".25"
                             android:src="@drawable/icon_rice"
-                            app:civ_border_width="2dp"
                             app:civ_border_color="#49C527"
-                            android:layout_weight=".25"/>
+                            app:civ_border_width="2dp" />
 
 
                         <TextView
@@ -92,9 +90,9 @@
                             android:layout_weight=".75"
                             android:gravity="center"
                             android:text="ধান চাষ"
-                            android:textStyle="bold"
+                            android:textColor="@color/black"
                             android:textSize="20sp"
-                            android:textColor="@color/black"/>
+                            android:textStyle="bold" />
 
                     </LinearLayout>
 
@@ -116,14 +114,13 @@
                         android:layout_height="match_parent"
                         android:orientation="vertical">
 
-                        <de.hdodenhof.circleimageview.CircleImageView
-                            xmlns:app="http://schemas.android.com/apk/res-auto"
+                        <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
+                            android:layout_weight=".25"
                             android:src="@drawable/icon_wheat"
-                            app:civ_border_width="2dp"
                             app:civ_border_color="#49C527"
-                            android:layout_weight=".25"/>
+                            app:civ_border_width="2dp" />
 
 
                         <TextView
@@ -132,9 +129,9 @@
                             android:layout_weight=".75"
                             android:gravity="center"
                             android:text="গম চাষ"
-                            android:textStyle="bold"
+                            android:textColor="@color/black"
                             android:textSize="20sp"
-                            android:textColor="@color/black"></TextView>
+                            android:textStyle="bold"></TextView>
 
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
@@ -157,8 +154,7 @@
                     android:layout_weight="1"
                     android:elevation="10dp"
                     app:cardBackgroundColor="#FCFDFD"
-                    app:cardCornerRadius="5dp"
-                    >
+                    app:cardCornerRadius="5dp">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -169,10 +165,10 @@
                             xmlns:app="http://schemas.android.com/apk/res-auto"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
+                            android:layout_weight=".25"
                             android:src="@drawable/icon_potato"
-                            app:civ_border_width="2dp"
                             app:civ_border_color="#49C527"
-                            android:layout_weight=".25"/>
+                            app:civ_border_width="2dp" />
 
 
                         <TextView
@@ -181,9 +177,9 @@
                             android:layout_weight=".75"
                             android:gravity="center"
                             android:text="আলু চাষ"
-                            android:textStyle="bold"
+                            android:textColor="@color/black"
                             android:textSize="20sp"
-                            android:textColor="@color/black"></TextView>
+                            android:textStyle="bold"></TextView>
 
                     </LinearLayout>
 
@@ -205,14 +201,13 @@
                         android:layout_height="match_parent"
                         android:orientation="vertical">
 
-                        <de.hdodenhof.circleimageview.CircleImageView
-                            xmlns:app="http://schemas.android.com/apk/res-auto"
+                        <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
+                            android:layout_weight=".25"
                             android:src="@drawable/icon_eggplant"
-                            app:civ_border_width="2dp"
                             app:civ_border_color="#49C527"
-                            android:layout_weight=".25"/>
+                            app:civ_border_width="2dp" />
 
 
                         <TextView
@@ -221,9 +216,9 @@
                             android:layout_weight=".75"
                             android:gravity="center"
                             android:text="বেগুন চাষ"
-                            android:textStyle="bold"
+                            android:textColor="@color/black"
                             android:textSize="20sp"
-                            android:textColor="@color/black"></TextView>
+                            android:textStyle="bold"></TextView>
 
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
@@ -246,22 +241,20 @@
                     android:layout_weight="1"
                     android:elevation="10dp"
                     app:cardBackgroundColor="#FCFDFD"
-                    app:cardCornerRadius="5dp"
-                    >
+                    app:cardCornerRadius="5dp">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:orientation="vertical">
 
-                        <de.hdodenhof.circleimageview.CircleImageView
-                            xmlns:app="http://schemas.android.com/apk/res-auto"
+                        <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
+                            android:layout_weight=".25"
                             android:src="@drawable/icon_juta"
-                            app:civ_border_width="2dp"
                             app:civ_border_color="#49C527"
-                            android:layout_weight=".25"/>
+                            app:civ_border_width="2dp" />
 
 
                         <TextView
@@ -271,9 +264,9 @@
                             android:gravity="center"
                             android:text="পাট চাষ
 "
-                            android:textStyle="bold"
+                            android:textColor="@color/black"
                             android:textSize="20sp"
-                            android:textColor="@color/black"></TextView>
+                            android:textStyle="bold"></TextView>
 
                     </LinearLayout>
 
@@ -295,14 +288,13 @@
                         android:layout_height="match_parent"
                         android:orientation="vertical">
 
-                        <de.hdodenhof.circleimageview.CircleImageView
-                            xmlns:app="http://schemas.android.com/apk/res-auto"
+                        <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
+                            android:layout_weight=".25"
                             android:src="@drawable/icon_corn"
-                            app:civ_border_width="2dp"
                             app:civ_border_color="#49C527"
-                            android:layout_weight=".25"/>
+                            app:civ_border_width="2dp" />
 
 
                         <TextView
@@ -311,9 +303,9 @@
                             android:layout_weight=".75"
                             android:gravity="center"
                             android:text="ভুট্টা চাষ "
-                            android:textStyle="bold"
+                            android:textColor="@color/black"
                             android:textSize="20sp"
-                            android:textColor="@color/black"></TextView>
+                            android:textStyle="bold"></TextView>
 
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
@@ -336,8 +328,7 @@
                     android:layout_weight="1"
                     android:elevation="10dp"
                     app:cardBackgroundColor="#FCFDFD"
-                    app:cardCornerRadius="5dp"
-                    >
+                    app:cardCornerRadius="5dp">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -347,10 +338,10 @@
                         <de.hdodenhof.circleimageview.CircleImageView
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
+                            android:layout_weight=".25"
                             android:src="@drawable/icon_mustard"
-                            app:civ_border_width="2dp"
                             app:civ_border_color="#49C527"
-                            android:layout_weight=".25"/>
+                            app:civ_border_width="2dp" />
 
 
                         <TextView
@@ -360,9 +351,9 @@
                             android:gravity="center"
                             android:text="সরিষা চাষ
 "
-                            android:textStyle="bold"
+                            android:textColor="@color/black"
                             android:textSize="20sp"
-                            android:textColor="@color/black"></TextView>
+                            android:textStyle="bold"></TextView>
 
                     </LinearLayout>
 
@@ -388,10 +379,10 @@
                         <de.hdodenhof.circleimageview.CircleImageView
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
+                            android:layout_weight=".25"
                             android:src="@drawable/icon_soybean"
-                            app:civ_border_width="2dp"
                             app:civ_border_color="#49C527"
-                            android:layout_weight=".25"/>
+                            app:civ_border_width="2dp" />
 
 
                         <TextView
@@ -400,9 +391,9 @@
                             android:layout_weight=".75"
                             android:gravity="center"
                             android:text="সয়াবিন চাষ "
-                            android:textStyle="bold"
+                            android:textColor="@color/black"
                             android:textSize="20sp"
-                            android:textColor="@color/black"></TextView>
+                            android:textStyle="bold"></TextView>
 
                     </LinearLayout>
 
@@ -411,9 +402,8 @@
             </LinearLayout>
 
 
-
-
         </LinearLayout>
     </ScrollView>
+
 
 </LinearLayout>

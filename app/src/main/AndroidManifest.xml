@@ -3,6 +3,7 @@
     package="com.example.adunik_krishi">
 
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/logo"
@@ -10,14 +11,15 @@
         android:roundIcon="@mipmap/logo"
         android:supportsRtl="true"
         android:theme="@style/Theme.Adunik_Krishi">
+        <activity android:name=".DanChas"></activity>
         <activity
             android:name=".screens.OTPActivity"
             android:exported="true"
-            android:parentActivityName=".screens.LoginActivity"/>
+            android:parentActivityName=".screens.LoginActivity" />
         <activity
             android:name=".screens.RegisterActivity"
             android:exported="true"
-            android:parentActivityName=".screens.LoginActivity"/>
+            android:parentActivityName=".screens.LoginActivity" />
         <activity
             android:name=".screens.LoginActivity"
             android:exported="true">
@@ -28,13 +30,10 @@
             </intent-filter>
         </activity>
         <activity android:name=".text" />
-        <activity android:name=".MainActivity"></activity>
-
-        <activity android:name=".screens.WeatherActivity"/>
-        <activity android:name=".DanChasa"/>
-        <activity android:name=".ChasabadPoddoti"/>
-        <activity android:name=".FishCahsabad"/>
-
+        <activity android:name=".MainActivity" />
+        <activity android:name=".screens.WeatherActivity" />
+        <activity android:name=".ChasabadPoddoti" />
+        <activity android:name=".FishCahsabad" />
     </application>
 
 </manifest>
