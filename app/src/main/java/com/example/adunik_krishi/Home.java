@@ -18,7 +18,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
@@ -201,6 +200,7 @@ public class Home extends Fragment implements View.OnClickListener {
         return cityName;
     }
 
+
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
@@ -217,4 +217,8 @@ public class Home extends Fragment implements View.OnClickListener {
         }
 
     }
+
+
+
+
 }

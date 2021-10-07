@@ -110,7 +110,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:layout_weight=".20"
-                                android:src="@drawable/ic_launcher_background"
+                                android:src="@drawable/img_chasabad"
 
                                 ></ImageView>
 
@@ -149,7 +149,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:layout_weight=".20"
-                                android:src="@mipmap/fish"
+                                android:src="@drawable/img_fish"
 
                                 ></ImageView>
 
@@ -183,8 +183,8 @@
                         android:layout_margin="10dp"
                         android:layout_weight="1"
                         android:elevation="10dp"
-                        app:cardBackgroundColor="#FCFDFD"
-                        app:cardCornerRadius="5dp"
+                        app:cardBackgroundColor="#DF8AD114"
+                        app:cardCornerRadius="5dp">
                        >
 
                         <LinearLayout
@@ -231,7 +231,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:layout_weight=".20"
-                                android:src="@drawable/ic_launcher_background"
+                                android:src="@drawable/ing_instroment"
 
                                 ></ImageView>
 
@@ -240,8 +240,9 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight=".80"
                                 android:gravity="center"
-                                android:text="This is Title"
-                                android:textStyle="bold"></TextView>
+                                android:text="কৃষি যন্ত্রপাতি"
+                                android:textStyle="bold"
+                                android:textColor="@color/black"></TextView>
 
                         </LinearLayout>
 
@@ -262,8 +263,8 @@
                         android:layout_margin="10dp"
                         android:layout_weight="1"
                         android:elevation="10dp"
-                        app:cardBackgroundColor="#FCFDFD"
-                        app:cardCornerRadius="5dp"
+                        app:cardBackgroundColor="#DF8AD114"
+                        app:cardCornerRadius="5dp">
                        >
 
                         <LinearLayout
@@ -341,8 +342,8 @@
                         android:layout_margin="10dp"
                         android:layout_weight="1"
                         android:elevation="10dp"
-                        app:cardBackgroundColor="#FCFDFD"
-                        app:cardCornerRadius="5dp"
+                        app:cardBackgroundColor="#DF8AD114"
+                        app:cardCornerRadius="5dp">
                        >
 
                         <LinearLayout
