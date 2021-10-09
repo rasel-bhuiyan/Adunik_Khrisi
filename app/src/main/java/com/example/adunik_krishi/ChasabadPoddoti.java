@@ -32,11 +32,12 @@ public class ChasabadPoddoti extends AppCompatActivity implements View.OnClickLi
     public void onClick(View v) {
        switch (v.getId()) {
             case R.id.C_Danchash:
-                Intent intentDanchash = new Intent(getApplicationContext(), DanChas.class);
+                Intent intentDanchash = new Intent(getApplicationContext(), Dan_Chas.class);
                 startActivity(intentDanchash);
                 break;
             case R.id.C_WheatChash:
-
+                Intent intentGomchash = new Intent(getApplicationContext(),gomChas.class);
+                startActivity(intentGomchash);
                 break;
 
         }

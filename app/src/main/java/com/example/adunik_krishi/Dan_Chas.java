@@ -7,17 +7,15 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-public class DanChas extends AppCompatActivity {
-
-    Button btn1, btn2;
+public class Dan_Chas extends AppCompatActivity {
+    Button btn1,btn2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_dan_chas);
+        setContentView(R.layout.activity_dan__chas);
 
         btn1 = findViewById(R.id.DanChas_prokria);
         btn2 = findViewById(R.id.Dan_rogbalai);
@@ -25,7 +23,8 @@ public class DanChas extends AppCompatActivity {
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent= new Intent(getApplicationContext(),DanChas.class);
+                Toast.makeText(Dan_Chas.this, "Danchasabad", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(Dan_Chas.this,Dan_Chas.class);
                 startActivity(intent);
             }
         });
@@ -33,15 +32,15 @@ public class DanChas extends AppCompatActivity {
         btn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "Bazar jat koron ", Toast.LENGTH_SHORT).show();
-                BazarJatKoron bazarJatKoron = new BazarJatKoron();
+                Toast.makeText(Dan_Chas.this, "xxxxx", Toast.LENGTH_SHORT).show();
+                FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+                transaction.replace(R.id.Dan_chas_layout,new Dan_rogbalais()).commit();
 
-                FragmentManager fm2 = getSupportFragmentManager();
-                FragmentTransaction ft2 = fm2.beginTransaction();
-                ft2.replace(R.id.Dan_chas_layout,bazarJatKoron,"bazarjatKoron");
-                ft2.commit();
             }
         });
+
+
+
 
     }
 }

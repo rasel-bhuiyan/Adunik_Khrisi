@@ -4,19 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F3EAC2"
+    tools:context=".Dan_Chas"
 
+    android:background="@color/white"
     android:orientation="vertical"
-    tools:context=".DanChas">
-
-    <!-- this is toolbar -->
+    >
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:background="#1E36DA"
-        app:title="ধান চাষ পদ্বতি"
+        app:title="আধুনিক কৃষি"
         app:titleTextColor="#FFF9F9"></androidx.appcompat.widget.Toolbar>
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -46,35 +45,63 @@
 
     </LinearLayout>
 
+<!-- for fragmant -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/Dan_chas_layout"
+        android:orientation="vertical"
+        >
+
+    </LinearLayout>
+
+    <!-- for fragmant -->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <LinearLayout
-            android:id="@+id/Dan_chas_layout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
+
             >
 
 
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
-                android:src="@drawable/img_Dan"></ImageView>
+                android:src="@drawable/img_dan"></ImageView>
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="dakfj choas skdfsdfks"
-                android:textColor="#0FBD35"
+                android:text="ধান চাষের পদ্ধতি "
+                android:textColor="#FBFBFB"
                 android:textStyle="bold"
+                android:textSize="25sp"
+                android:background="@color/green"
+                ></TextView>
+
+            <TextView
+                android:paddingTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/danchasProkrian"
+               android:textColor="@color/black"
+                android:padding="10dp"
                 ></TextView>
 
 
 
             <!-- end layout -->
         </LinearLayout>
+
     </ScrollView>
+
+
+
+
 
 
 </LinearLayout>

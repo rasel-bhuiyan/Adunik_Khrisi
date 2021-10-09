@@ -82,12 +82,10 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.menu_marketing:
                         Toast.makeText(MainActivity.this, "Bazar jat koron ", Toast.LENGTH_SHORT).show();
                         BazarJatKoron bazarJatKoron = new BazarJatKoron();
-
                         FragmentManager fm2 = getSupportFragmentManager();
                         FragmentTransaction ft2 = fm2.beginTransaction();
                         ft2.replace(R.id.mainActivityLayout,bazarJatKoron,"bazarjatKoron");
                         ft2.commit();
-
                         drawerLayout.closeDrawer(GravityCompat.START);
                         break;
 

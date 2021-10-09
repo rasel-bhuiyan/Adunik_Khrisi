@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.adunik_krishi">
 
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <uses-feature android:name="android.hardware.type.watch" />
+
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <application
@@ -11,7 +15,8 @@
         android:roundIcon="@mipmap/logo"
         android:supportsRtl="true"
         android:theme="@style/Theme.Adunik_Krishi">
-        <activity android:name=".DanChas"></activity>
+        <activity android:name=".gomChas"></activity>
+        <activity android:name=".Dan_Chas" />
         <activity
             android:name=".screens.OTPActivity"
             android:exported="true"

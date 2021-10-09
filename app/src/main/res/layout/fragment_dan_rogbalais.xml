@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffff"
+
+    tools:context=".Dan_rogbalais">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:background="#1E36DA"
+        android:paddingLeft="10dp"
+        android:text="ধানের রোগ বালাই"
+        android:textColor="#FFFF"
+        android:textSize="25sp"
+        android:textStyle="bold">
+
+    </TextView>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <!--  1-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingTop="10dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:src="@drawable/dan_badamidag"></ImageView>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="#64FFDA"
+                    android:paddingLeft="15dp"
+                    android:text="ধানের বাদামী রোগ"
+                    android:textColor="@color/green"
+                    android:textSize="25sp"
+                    android:textStyle="bold"></TextView>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="@string/dan_badamiRog"
+                    android:textColor="@color/black"></TextView>
+            </LinearLayout>
+            <!--  2-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingTop="10dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:src="@drawable/dan_kholpora"></ImageView>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="#64FFDA"
+                    android:paddingLeft="15dp"
+                    android:text="ধানের খোলপোড়া রোগ"
+                    android:textColor="@color/green"
+                    android:textSize="25sp"
+                    android:textStyle="bold"></TextView>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="@string/dan_kholpuraRog"
+                    android:textColor="@color/black"></TextView>
+            </LinearLayout>
+            <!--  3-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:src="@drawable/dan_tonkor_rog"></ImageView>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="#64FFDA"
+                    android:paddingLeft="15dp"
+                    android:text="ধানের টুংরো রোগ"
+                    android:textColor="@color/green"
+                    android:textSize="25sp"
+                    android:textStyle="bold"></TextView>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="@string/dan_tonkrorRog"
+                    android:textColor="@color/black"></TextView>
+            </LinearLayout>
+
+
+
+            <TextView
+                android:id="@+id/dan_rog_website"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:text="আরো তথ্যের জন্য তথ্যের জন্য ক্লিক করুন  "
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:background="@color/green"></TextView>
+
+
+
+
+            <!-- end layout-->
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</FrameLayout>

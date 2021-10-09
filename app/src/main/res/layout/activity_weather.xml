@@ -31,7 +31,7 @@
             android:id="@+id/cityTV"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="গাজীপুর"
+            android:text="savar"
             android:textColor="#FFF"
             android:drawableStart="@drawable/ic_baseline_location_on_24" />
 

@@ -5,9 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
-    android:background="#7FD34C"
+    android:background="#E97FD34C"
     android:orientation="vertical"
     tools:context=".screens.RegisterActivity">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="86dp"
+        android:src="@mipmap/logo"></ImageView>
 
 
     <TextView
@@ -26,7 +31,8 @@
         android:layout_marginBottom="10dp"
         android:hint="আপনার নাম"
         android:inputType="textPersonName"
-        android:minHeight="48dp" />
+        android:minHeight="48dp"
+        android:background="@drawable/round_bg"/>
 
     <EditText
         android:id="@+id/phoneET"
@@ -36,7 +42,8 @@
         android:layout_marginBottom="10dp"
         android:hint="আপনার ফোন নম্বর"
         android:inputType="phone"
-        android:minHeight="48dp" />
+        android:minHeight="48dp"
+        android:background="@drawable/round_bg"/>
 
     <Spinner
         android:id="@+id/cityET"
@@ -46,7 +53,8 @@
         android:layout_marginBottom="10dp"
         android:hint="আপনার জেলা"
         android:inputType="text"
-        android:minHeight="48dp" />
+        android:minHeight="48dp"
+        android:background="@drawable/round_bg"/>
 
     <EditText
         android:id="@+id/passwordET"
@@ -56,7 +64,8 @@
         android:layout_marginBottom="10dp"
         android:hint="Password"
         android:inputType="textPassword"
-        android:minHeight="48dp" />
+        android:minHeight="48dp"
+        android:background="@drawable/round_bg"/>
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -69,7 +78,7 @@
             android:layout_marginEnd="20dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Register"
+            android:text="রেজিস্টার করুন"
             android:textSize="20sp"
             android:backgroundTint="#FFFFFF"
             android:textColor="#000"/>
@@ -93,6 +102,8 @@
         android:layout_marginTop="20dp"
         android:minHeight="48dp"
         android:onClick="sign_in"
-        android:text="@string/already_have_an_account_sign_in" />
+        android:text="@string/already_have_an_account_sign_in"
+        android:textColor="@color/black"
+        android:textSize="18sp"/>
 
 </LinearLayout>
