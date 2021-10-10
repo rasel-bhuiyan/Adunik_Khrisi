@@ -4,7 +4,9 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -171,12 +173,14 @@ public class OTPActivity extends AppCompatActivity {
         dataMap.put("city",city);
         dataMap.put("password",password);
 
-        databaseReference.child(uID).setValue(dataMap).addOnCompleteListener(new OnCompleteListener<Void>() {
+        databaseReference.child(phone).setValue(dataMap).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                 if(task.isSuccessful()){
 
                     Toast.makeText(OTPActivity.this, "আপনার একাউন্ট খুলা হয়েছে ।", Toast.LENGTH_SHORT).show();
+
+                    saveLoginInfo();
 
                     Intent intent = new Intent(OTPActivity.this,RegisterActivity.class);
                     intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
@@ -193,6 +197,17 @@ public class OTPActivity extends AppCompatActivity {
                 Toast.makeText(OTPActivity.this, "আপনার একাউন্ট খুলা যায় নি ।", Toast.LENGTH_SHORT).show();
             }
         });
+    }
+
+    private void saveLoginInfo() {
+
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putString("phone",phone);
+        editor.putString("password",password);
+        editor.putBoolean("isLogin",true);
+        editor.apply();
+
     }
 
     private void initialize() {

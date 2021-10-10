@@ -15,7 +15,10 @@
         android:roundIcon="@mipmap/logo"
         android:supportsRtl="true"
         android:theme="@style/Theme.Adunik_Krishi">
-        <activity android:name=".gomChas"></activity>
+        <activity
+            android:name=".screens.AddProductActivity"
+            android:exported="true" />
+        <activity android:name=".gomChas" />
         <activity android:name=".Dan_Chas" />
         <activity
             android:name=".screens.OTPActivity"
@@ -27,15 +30,15 @@
             android:parentActivityName=".screens.LoginActivity" />
         <activity
             android:name=".screens.LoginActivity"
-            android:exported="true">
+            android:exported="true"></activity>
+        <activity android:name=".text" />
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".text" />
-        <activity android:name=".MainActivity" />
         <activity android:name=".screens.WeatherActivity" />
         <activity android:name=".ChasabadPoddoti" />
         <activity android:name=".FishCahsabad" />

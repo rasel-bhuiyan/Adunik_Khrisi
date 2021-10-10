@@ -39,6 +39,9 @@
             android:layout_marginBottom="10dp"
             android:background="@drawable/round_bg"
             android:hint="এইখানে OTP কোড লিখুন"
+            android:padding="15dp"
+            android:textColorHint="#9F9B9B"
+            android:textColor="#000"
             android:inputType="number"
             android:minHeight="48dp" />
 

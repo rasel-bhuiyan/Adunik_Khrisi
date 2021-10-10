@@ -4,7 +4,9 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -84,6 +86,14 @@ public class LoginActivity extends AppCompatActivity {
                             if(user.getPassword().equals(password)){
 
                                 isNumberFound = true;
+
+                                SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+                                SharedPreferences.Editor editor = preferences.edit();
+                                editor.putString("phone",phone);
+                                editor.putString("password",password);
+                                editor.putBoolean("isLogin",true);
+                                editor.apply();
+
                                 reload();
 
                             }
@@ -99,13 +109,13 @@ public class LoginActivity extends AppCompatActivity {
                     if(!isNumberFound){
                         loadingBar.setVisibility(View.INVISIBLE);
                         loginBTN.setVisibility(View.VISIBLE);
-                        Toast.makeText(LoginActivity.this, "এই নম্বরে ফোন Account পাওয়া যায় নি", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(LoginActivity.this, "এই ফোন নম্বরে কোন Account পাওয়া যায় নি", Toast.LENGTH_SHORT).show();
                     }
 
 
                 }
                 else{
-                    Toast.makeText(LoginActivity.this, "এই নম্বরে ফোন Account পাওয়া যায় নি", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoginActivity.this, "এই ফোন নম্বরে কোন Account পাওয়া যায় নি", Toast.LENGTH_SHORT).show();
                     loadingBar.setVisibility(View.INVISIBLE);
                     loginBTN.setVisibility(View.VISIBLE);
                 }
@@ -139,10 +149,20 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
+
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
+        boolean isLogin = preferences.getBoolean("isLogin",false);
+
         FirebaseUser currentUser = mAuth.getCurrentUser();
+
         if(currentUser != null){
             reload();
         }
+        else if(isLogin){
+            reload();
+        }
+
+
 
     }
 

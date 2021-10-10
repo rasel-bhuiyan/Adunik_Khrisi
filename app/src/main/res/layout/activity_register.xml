@@ -30,6 +30,9 @@
         android:layout_margin="20dp"
         android:layout_marginBottom="10dp"
         android:hint="আপনার নাম"
+        android:padding="15dp"
+        android:textColor="#000"
+        android:textColorHint="#9F9B9B"
         android:inputType="textPersonName"
         android:minHeight="48dp"
         android:background="@drawable/round_bg"/>
@@ -41,6 +44,9 @@
         android:layout_margin="20dp"
         android:layout_marginBottom="10dp"
         android:hint="আপনার ফোন নম্বর"
+        android:padding="15dp"
+        android:textColorHint="#9F9B9B"
+        android:textColor="#000"
         android:inputType="phone"
         android:minHeight="48dp"
         android:background="@drawable/round_bg"/>
@@ -52,6 +58,8 @@
         android:layout_margin="20dp"
         android:layout_marginBottom="10dp"
         android:hint="আপনার জেলা"
+        android:padding="15dp"
+        android:textColorHint="#9F9B9B"
         android:inputType="text"
         android:minHeight="48dp"
         android:background="@drawable/round_bg"/>
@@ -63,6 +71,9 @@
         android:layout_margin="20dp"
         android:layout_marginBottom="10dp"
         android:hint="Password"
+        android:padding="15dp"
+        android:textColor="#000"
+        android:textColorHint="#9F9B9B"
         android:inputType="textPassword"
         android:minHeight="48dp"
         android:background="@drawable/round_bg"/>

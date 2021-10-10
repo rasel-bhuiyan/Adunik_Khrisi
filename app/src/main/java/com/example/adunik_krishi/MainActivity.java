@@ -3,8 +3,10 @@ package com.example.adunik_krishi;
 import android.Manifest;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.MenuItem;
 import android.widget.Toast;
 
@@ -80,7 +82,6 @@ public class MainActivity extends AppCompatActivity {
                         break;
 
                     case R.id.menu_marketing:
-                        Toast.makeText(MainActivity.this, "Bazar jat koron ", Toast.LENGTH_SHORT).show();
                         BazarJatKoron bazarJatKoron = new BazarJatKoron();
                         FragmentManager fm2 = getSupportFragmentManager();
                         FragmentTransaction ft2 = fm2.beginTransaction();
@@ -100,6 +101,7 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     case R.id.menu_logout:
                         FirebaseAuth.getInstance().signOut();
+                        updateLoginInfo();
                         startActivity(new Intent(MainActivity.this, LoginActivity.class)
                                 .setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK));
                         drawerLayout.closeDrawer(GravityCompat.START);
@@ -109,6 +111,17 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             }
         });
+
+    }
+
+    private void updateLoginInfo() {
+
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putString("phone",null);
+        editor.putString("password",null);
+        editor.putBoolean("isLogin",false);
+        editor.apply();
 
     }
 

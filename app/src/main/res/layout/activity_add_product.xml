@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:padding="10dp"
+    android:orientation="vertical"
+    android:background="@drawable/loginbg"
+    tools:context=".screens.AddProductActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="আপনার Product বিস্তারিত"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:layout_marginBottom="30dp"/>
+
+    <EditText
+        android:id="@+id/product_nameET"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/round_bg"
+        android:padding="15dp"
+        android:layout_margin="10dp"
+        android:hint="নাম"
+        android:textColor="#000"
+        android:textColorHint="#959393"
+        android:inputType="text"/>
+
+    <EditText
+        android:id="@+id/product_quantityTV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/round_bg"
+        android:padding="15dp"
+        android:layout_margin="10dp"
+        android:hint="পরিমাণ e.g কেজি"
+        android:textColor="#000"
+        android:textColorHint="#959393"
+        android:inputType="text"/>
+
+    <EditText
+        android:id="@+id/product_detailsTV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/round_bg"
+        android:padding="20dp"
+        android:layout_margin="10dp"
+        android:hint="বিস্তারিত..."
+        android:textColor="#000"
+        android:textColorHint="#959393"
+        android:inputType="text"/>
+
+    <EditText
+        android:id="@+id/product_amountTV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/round_bg"
+        android:padding="15dp"
+        android:layout_margin="10dp"
+        android:hint="দাম e.g প্রতি কেজি"
+        android:textColor="#000"
+        android:textColorHint="#959393"
+        android:inputType="numberDecimal"/>
+
+    <LinearLayout
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/product_imageBTN"
+            android:layout_width="0dp"
+            android:layout_weight=".7"
+            android:layout_height="wrap_content"
+            android:background="@drawable/round_bg"
+            android:text="ছবি যুক্ত করুন"
+            android:layout_marginEnd="20dp"
+            android:textColor="#959393"/>
+
+        <RelativeLayout
+            android:layout_marginStart="20dp"
+            android:layout_width="0dp"
+            android:layout_weight=".3"
+            android:layout_height="100dp">
+
+
+            <ImageView
+                android:id="@+id/product_imageView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_baseline_image_24" />
+
+            <ImageView
+                android:visibility="invisible"
+                android:id="@+id/product_imageShow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_baseline_delete_24"
+                android:layout_alignParentEnd="true"
+                />
+
+        </RelativeLayout>
+
+
+
+    </LinearLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/product_addBTN"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="40dp"
+            android:text="যুক্ত করুন"
+            android:textSize="20sp"
+            android:textColor="#000"
+            android:background="#FFF"/>
+
+        <ProgressBar
+            android:visibility="invisible"
+            android:id="@+id/loadingBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="40dp" />
+
+    </RelativeLayout>
+
+
+
+</LinearLayout>

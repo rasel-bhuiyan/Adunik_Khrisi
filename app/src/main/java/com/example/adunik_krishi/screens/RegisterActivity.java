@@ -119,7 +119,7 @@ public class RegisterActivity extends AppCompatActivity {
 
     private void setSpinner() {
 
-        ArrayAdapter arrayAdapter = new ArrayAdapter(this,R.layout.support_simple_spinner_dropdown_item,cities);
+        ArrayAdapter arrayAdapter = new ArrayAdapter(this,R.layout.dropdownspinner,cities);
         arrayAdapter.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item);
         cityET.setAdapter(arrayAdapter);
     }
