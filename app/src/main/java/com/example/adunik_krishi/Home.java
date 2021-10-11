@@ -29,6 +29,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.adunik_krishi.constant.Constant;
+import com.example.adunik_krishi.screens.QuestionAnswerActivity;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -48,7 +49,7 @@ public class Home extends Fragment implements View.OnClickListener {
     }
 
     TextView time_date,tempTV;
-    CardView chasabad, mosshoChas;
+    CardView chasabad, mosshoChas,questionAndAnswer;
     String city = "";
     DecimalFormat decimalFormat = new DecimalFormat("#.##");
 
@@ -69,9 +70,11 @@ public class Home extends Fragment implements View.OnClickListener {
         //
         chasabad = HomeView.findViewById(R.id.H_chasabad);
         mosshoChas = HomeView.findViewById(R.id.h_fishChash);
+        questionAndAnswer = HomeView.findViewById(R.id.questionAndAnswer);
 
         chasabad.setOnClickListener(this);
         mosshoChas.setOnClickListener(this);
+        questionAndAnswer.setOnClickListener(this);
 
         getLocation();
 
@@ -208,11 +211,14 @@ public class Home extends Fragment implements View.OnClickListener {
                 Toast.makeText(getActivity(), "chasabad", Toast.LENGTH_SHORT).show();
                 Intent intentChasha = new Intent(getActivity().getApplication(),ChasabadPoddoti.class);
                 startActivity(intentChasha);
-
-              break;
+                break;
             case R.id.h_fishChash:
                 Intent intentFishchasabadPoddoti = new Intent(getActivity().getApplication(),FishCahsabad.class);
                 startActivity(intentFishchasabadPoddoti);
+                break;
+            case R.id.questionAndAnswer:
+                Intent intent = new Intent(getContext(), QuestionAnswerActivity.class);
+                startActivity(intent);
                 break;
         }
 
