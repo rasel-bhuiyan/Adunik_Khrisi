@@ -3,10 +3,9 @@
     package="com.example.adunik_krishi">
 
     <uses-permission android:name="android.permission.WAKE_LOCK" />
-
-    <uses-feature android:name="android.hardware.type.watch" />
-
+    <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
 
     <application
         android:allowBackup="true"
@@ -15,6 +14,9 @@
         android:roundIcon="@mipmap/logo"
         android:supportsRtl="true"
         android:theme="@style/Theme.Adunik_Krishi">
+        <activity
+            android:name=".screens.ProductDetailsActivity"
+            android:exported="true" />
         <activity
             android:name=".screens.AddProductActivity"
             android:exported="true" />
@@ -30,7 +32,7 @@
             android:parentActivityName=".screens.LoginActivity" />
         <activity
             android:name=".screens.LoginActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity android:name=".text" />
         <activity android:name=".MainActivity">
             <intent-filter>

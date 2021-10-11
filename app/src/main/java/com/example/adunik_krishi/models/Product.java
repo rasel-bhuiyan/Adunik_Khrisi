@@ -1,18 +1,27 @@
 package com.example.adunik_krishi.models;
 
 public class Product {
-    private String pName,pDetails,pQuantity,pAmount,pPhone,pImage;
+    private String pID,pName,pDetails,pQuantity,pAmount,pPhone,pImage;
 
     public Product() {
     }
 
-    public Product(String pName, String pDetails, String pQuantity, String pAmount, String pPhone, String pImage) {
+    public Product(String pID, String pName, String pDetails, String pQuantity, String pAmount, String pPhone, String pImage) {
+        this.pID = pID;
         this.pName = pName;
         this.pDetails = pDetails;
         this.pQuantity = pQuantity;
         this.pAmount = pAmount;
         this.pPhone = pPhone;
         this.pImage = pImage;
+    }
+
+    public String getpID() {
+        return pID;
+    }
+
+    public void setpID(String pID) {
+        this.pID = pID;
     }
 
     public String getpName() {

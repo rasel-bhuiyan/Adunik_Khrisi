@@ -172,6 +172,7 @@ public class AddProductActivity extends AppCompatActivity {
         DatabaseReference productRef = databaseReference.child(randomValue);
 
         HashMap<String,Object> productMap = new HashMap<>();
+        productMap.put("pID",randomValue);
         productMap.put("pName",pName);
         productMap.put("pDetails",pDetails);
         productMap.put("pQuantity",pQuantity);

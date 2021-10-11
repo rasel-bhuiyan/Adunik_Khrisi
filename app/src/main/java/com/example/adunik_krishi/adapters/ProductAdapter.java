@@ -1,6 +1,8 @@
 package com.example.adunik_krishi.adapters;
 
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.text.Layout;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,6 +19,7 @@ import com.bumptech.glide.Glide;
 import com.example.adunik_krishi.R;
 import com.example.adunik_krishi.constant.Constant;
 import com.example.adunik_krishi.models.Product;
+import com.example.adunik_krishi.screens.ProductDetailsActivity;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -53,7 +56,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
 
         holder.product_nameTV.setText(product.getpName());
         holder.product_detailsTV.setText(product.getpDetails());
-        holder.product_priceTV.setText("দাম - "+product.getpAmount()+" টাকা / কেজি");
+        holder.product_priceTV.setText("দাম - "+product.getpAmount());
         Glide.with(context).load(product.getpImage()).into(holder.product_imageView);
 
         databaseReference = FirebaseDatabase.getInstance(Constant.DATABASE_REFERENCE).getReference("users").child(product.getpPhone()).child("name");
@@ -76,14 +79,19 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
         holder.product_buyBTN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(context, "কিনুন", Toast.LENGTH_SHORT).show();
+
+                Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + "+880"+product.getpPhone()));
+                context.startActivity(intent);
             }
         });
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(context, "পুরো Item Clicked", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(context, ProductDetailsActivity.class);
+                intent.putExtra("productID",product.getpID());
+                intent.putExtra("phoneNumber",product.getpPhone());
+                context.startActivity(intent);
             }
         });
 

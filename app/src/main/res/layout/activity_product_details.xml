@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:padding="10dp"
+    android:gravity="center"
+    tools:context=".screens.ProductDetailsActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="পণ্য এর বিস্তারিত"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:layout_marginBottom="20dp"/>
+
+    <ImageView
+        android:id="@+id/product_imageView"
+        android:layout_gravity="center"
+        android:layout_width="200dp"
+        android:layout_height="250dp"
+        android:scaleType="fitXY"/>
+
+    <TextView
+        android:id="@+id/product_nameTV"
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="পণ্য এর নাম"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:layout_gravity="center"/>
+
+    <LinearLayout
+        android:gravity="center"
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/product_amountTV"
+            android:layout_width="0dp"
+            android:layout_weight=".5"
+            android:layout_height="wrap_content"
+            android:text="দাম - "
+            android:textColor="@color/black"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/product_adminTV"
+            android:layout_width="0dp"
+            android:layout_weight=".5"
+            android:layout_height="wrap_content"
+            android:text="বিক্রি করবেন - "
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            android:textAlignment="center"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/product_quantityTV"
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="পণ্য এর পরিমাণ -"
+        android:textStyle="bold"
+        android:textColor="@color/black"/>
+
+    <TextView
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="পণ্য এর বিস্তারিতঃ"
+        android:textStyle="bold"
+        android:textColor="#5A5959"/>
+
+    <TextView
+        android:id="@+id/product_detailsTV"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="পণ্য এর বিস্তারিতঃ"
+        android:textColor="#5A5959"/>
+
+
+    <TextView
+        android:id="@+id/product_adminCityTV"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="মালিকের ঠিকানাঃ "
+        android:textColor="@color/black"/>
+
+
+    <Button
+        android:id="@+id/product_callBTN"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="পণ্য এর মালিককে কল করুন"
+        android:layout_gravity="center"
+        android:layout_margin="20dp"/>
+
+
+</LinearLayout>
