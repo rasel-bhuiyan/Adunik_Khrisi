@@ -49,7 +49,7 @@ public class Home extends Fragment implements View.OnClickListener {
     }
 
     TextView time_date,tempTV;
-    CardView chasabad, mosshoChas,questionAndAnswer;
+    CardView chasabad, mosshoChas,questionAnswer;
     String city = "";
     DecimalFormat decimalFormat = new DecimalFormat("#.##");
 
@@ -70,11 +70,11 @@ public class Home extends Fragment implements View.OnClickListener {
         //
         chasabad = HomeView.findViewById(R.id.H_chasabad);
         mosshoChas = HomeView.findViewById(R.id.h_fishChash);
-        questionAndAnswer = HomeView.findViewById(R.id.questionAndAnswer);
+        questionAnswer = HomeView.findViewById(R.id.questionAnswer);
 
         chasabad.setOnClickListener(this);
         mosshoChas.setOnClickListener(this);
-        questionAndAnswer.setOnClickListener(this);
+        questionAnswer.setOnClickListener(this);
 
         getLocation();
 
@@ -216,7 +216,7 @@ public class Home extends Fragment implements View.OnClickListener {
                 Intent intentFishchasabadPoddoti = new Intent(getActivity().getApplication(),FishCahsabad.class);
                 startActivity(intentFishchasabadPoddoti);
                 break;
-            case R.id.questionAndAnswer:
+            case R.id.questionAnswer:
                 startActivity(new Intent(getContext(), QuestionAnswerActivity.class));
                 break;
         }
