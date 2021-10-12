@@ -87,7 +87,7 @@ public class BazarJatKoron extends Fragment {
                     loadingBar.dismiss();
                 }
                 else {
-                    Toast.makeText(getActivity(), "কোন পণ্য পাওয়া যায় নি ।", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(), "কোন পণ্য পাওয়া যায় নি।", Toast.LENGTH_SHORT).show();
                 }
             }
 
