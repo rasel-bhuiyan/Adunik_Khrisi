@@ -50,7 +50,7 @@ public class Home extends Fragment implements View.OnClickListener {
 
     TextView time_date,tempTV;
     CardView chasabad, mosshoChas,questionAnswer;
-    String city = "";
+    String city;
     DecimalFormat decimalFormat = new DecimalFormat("#.##");
 
 
@@ -95,7 +95,12 @@ public class Home extends Fragment implements View.OnClickListener {
                 String fullCity = getCityName(location.getLatitude(), location.getLongitude());
                 city = fullCity.substring(0,fullCity.indexOf(' '));
 
-                getWeatherDetails(city);
+                if(city.isEmpty()){
+                    getWeatherDetails("Savar");
+                }
+                else{
+                    getWeatherDetails(city);
+                }
             }
             catch (Exception e){
                 e.printStackTrace();
@@ -124,7 +129,12 @@ public class Home extends Fragment implements View.OnClickListener {
 
                         city = fullCity.substring(0,fullCity.indexOf(' '));
 
-                        getWeatherDetails(city);
+                        if(city.isEmpty()){
+                            getWeatherDetails("Savar");
+                        }
+                        else{
+                            getWeatherDetails(city);
+                        }
 
                     }
                     catch (Exception e){

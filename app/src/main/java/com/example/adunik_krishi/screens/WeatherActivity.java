@@ -40,7 +40,7 @@ public class WeatherActivity extends AppCompatActivity {
 
     TextView cityTV, tempTV, feelTV, humidityTV, airTV, cloudTV, pressureTV, detailsTV, maxTempTV, minTempTV;
     DecimalFormat decimalFormat = new DecimalFormat("#.##");
-    String city = "";
+    String city;
 
 
 
@@ -68,7 +68,12 @@ public class WeatherActivity extends AppCompatActivity {
                 String fullCity = getCityName(location.getLatitude(), location.getLongitude());
                 city = fullCity.substring(0,fullCity.indexOf(' '));
 
-                getWeatherDetails(city);
+                if(city.isEmpty()){
+                    getWeatherDetails("Savar");
+                }
+                else{
+                    getWeatherDetails(city);
+                }
             }
             catch (Exception e){
                 e.printStackTrace();
@@ -121,7 +126,12 @@ public class WeatherActivity extends AppCompatActivity {
 
                         city = fullCity.substring(0,fullCity.indexOf(' '));
 
-                        getWeatherDetails(city);
+                        if(city.isEmpty()){
+                            getWeatherDetails("Savar");
+                        }
+                        else{
+                            getWeatherDetails(city);
+                        }
 
                     }
                     catch (Exception e){
