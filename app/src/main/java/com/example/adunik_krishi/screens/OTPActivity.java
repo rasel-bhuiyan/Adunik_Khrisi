@@ -46,6 +46,8 @@ public class OTPActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private DatabaseReference databaseReference;
 
+    PhoneAuthCredential phoneAuthCredential;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -128,7 +130,7 @@ public class OTPActivity extends AppCompatActivity {
 
     private void verifyCode(String code) {
 
-        PhoneAuthCredential phoneAuthCredential = PhoneAuthProvider.getCredential(mVerificationId,code);
+        phoneAuthCredential = PhoneAuthProvider.getCredential(mVerificationId,code);
         signInWithPhoneAuthCredential(phoneAuthCredential);
     }
 

@@ -1,9 +1,120 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/weather_bg"
+    android:gravity="center"
+    android:orientation="vertical"
     tools:context=".screens.AddQuestionActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="আপনার প্রশ্ন এর বিস্তারিত লিখুন"
+        android:textSize="20sp"
+        android:textColor="#000"
+        android:layout_marginBottom="30dp"
+        android:textAlignment="center"/>
+
+    <EditText
+        android:id="@+id/question_titleET"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/round_bg"
+        android:padding="15dp"
+        android:layout_margin="10dp"
+        android:hint="আপনার প্রশ্ন"
+        android:textColor="#000"
+        android:textColorHint="#959393"
+        android:inputType="text"/>
+
+    <EditText
+        android:id="@+id/question_detailsTV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/round_bg"
+        android:padding="30dp"
+        android:layout_margin="10dp"
+        android:hint="বিস্তারিত..."
+        android:textColor="#000"
+        android:textColorHint="#959393"
+        android:inputType="text"/>
+
+    <LinearLayout
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/question_imageBTN"
+            android:layout_width="0dp"
+            android:layout_weight=".7"
+            android:layout_height="wrap_content"
+            android:background="@drawable/round_bg"
+            android:text="ছবি যুক্ত করুন (Optional)"
+            android:layout_marginEnd="20dp"
+            android:textColor="#959393"/>
+
+        <RelativeLayout
+            android:layout_marginStart="20dp"
+            android:layout_width="0dp"
+            android:layout_weight=".3"
+            android:layout_height="100dp">
+
+
+            <ImageView
+                android:id="@+id/question_imageView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_baseline_image_24" />
+
+            <ImageView
+                android:visibility="invisible"
+                android:id="@+id/question_imageShow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_baseline_delete_24"
+                android:layout_alignParentEnd="true"
+                />
+
+        </RelativeLayout>
+
+
+
+    </LinearLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/question_addBTN"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="40dp"
+            android:text="প্রশ্ন যুক্ত করুন"
+            android:textSize="20sp"
+            android:textColor="#000"
+            android:background="#FFF"/>
+
+        <ProgressBar
+            android:id="@+id/loadingBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="40dp"
+            android:visibility="invisible" />
+
+    </RelativeLayout>
+
+</LinearLayout>
