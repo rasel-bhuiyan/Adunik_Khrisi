@@ -217,8 +217,7 @@ public class Home extends Fragment implements View.OnClickListener {
                 startActivity(intentFishchasabadPoddoti);
                 break;
             case R.id.questionAndAnswer:
-                Intent intent = new Intent(getContext(), QuestionAnswerActivity.class);
-                startActivity(intent);
+                startActivity(new Intent(getContext(), QuestionAnswerActivity.class));
                 break;
         }
 
