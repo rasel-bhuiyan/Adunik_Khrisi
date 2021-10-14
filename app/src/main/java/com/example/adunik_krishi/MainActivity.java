@@ -69,6 +69,11 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.menu_chasabad:
                         Toast.makeText(getApplicationContext(), "this is chasabad " , Toast.LENGTH_SHORT).show();
                         break;
+                    case R.id.menu_market_products_price:
+                        Intent intentMarketPrice = new Intent(getApplicationContext(),Market_Price.class);
+                        startActivity(intentMarketPrice);
+
+                        break;
 
                     case R.id.menu_instrument:
                         Toast.makeText(MainActivity.this, "call", Toast.LENGTH_SHORT).show();
@@ -138,12 +143,12 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         new AlertDialog.Builder(this)
-                .setMessage("Are you sure you want to exit?").setCancelable(false)
-                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                .setMessage("আপনি কি এপ থেকে বের হতে চান?").setCancelable(false)
+                .setPositiveButton("হ্যাঁ", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         MainActivity.super.onBackPressed();
                     }
-                }) .setNegativeButton("No", null).show();
+                }) .setNegativeButton("না", null).show();
     }
 
 

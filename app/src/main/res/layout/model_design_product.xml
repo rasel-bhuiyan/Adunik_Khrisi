@@ -81,7 +81,7 @@
                     android:layout_weight=".5"
                     android:layout_height="wrap_content"
                     android:text="কিনুন"
-                    android:background="#000"/>
+                    android:background="#E2000000"/>
 
             </LinearLayout>
 

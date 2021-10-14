@@ -6,13 +6,16 @@
         android:title="হোম" />
     <item
         android:id="@+id/menu_chasabad"
+        android:icon="@drawable/ic_chasabadpoddoti"
         android:title="চাষাবাদ পদ্বতি" />
     <item
-        android:id="@+id/menu_Fish"
-        android:title="মৎস্য চাষ পদ্বতি" />
+        android:id="@+id/menu_market_products_price"
+        android:icon="@drawable/ic_market_price"
+        android:title="আজকের বাজার দর" />
 
     <item
         android:id="@+id/menu_instrument"
+        android:icon="@drawable/ic_instroment"
         android:title="কৃষি যন্ত্রপাতি" />
 
     <item
@@ -31,6 +34,7 @@
 
     <item
         android:id="@+id/menu_profile"
+        android:icon="@drawable/ic_profile"
         android:title="প্রোফাইল"></item>
 
     <item

@@ -3,12 +3,131 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".krishi_instrument">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".krishi_instrument"
+
+    android:background="@color/white">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+    <!-- this is toolbar -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="50dp"
+        android:background="#1E36DA"
+        app:title="কৃষি যন্ত্রপাতি"
+        app:titleTextColor="#FFF9F9"></androidx.appcompat.widget.Toolbar>
+
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:padding="10dp"
+        android:layout_height="wrap_content"
+        android:elevation="10dp"
+        android:layout_margin="10dp"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="12dp"
+        android:background="@color/white"
+        android:backgroundTint="#CB9EEC80"
+
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/model_product_imageView"
+                android:layout_gravity="center"
+                android:layout_margin="5dp"
+                android:layout_width="0dp"
+                android:layout_weight=".3"
+                android:layout_height="120dp"
+                android:src="@drawable/logo"/>
+
+            <LinearLayout
+                android:padding="10dp"
+                android:layout_width="0dp"
+                android:layout_weight=".7"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/model_product_nameTV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="টাক্টর "
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/model_product_ownerTV"
+                    android:layout_marginTop="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="ুিতকৃাতদ"
+                    android:textSize="12sp"
+                    android:textColor="#676262" />
+
+                <TextView
+                    android:id="@+id/model_product_detailsTV"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="বিস্তারিত"
+                    android:maxLines="2"
+                    android:textColor="#676262" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/model_product_priceTV"
+                        android:layout_width="0dp"
+                        android:layout_weight=".5"
+                        android:layout_height="wrap_content"
+                        android:text="দাম - ১০০০০ টাকা মাত্র "
+                        android:textColor="#000000"
+                        android:textStyle="bold"
+                        android:layout_gravity="center"/>
+
+                    <Button
+                        android:id="@+id/model_productBuyBTN"
+                        android:layout_marginLeft="10dp"
+                        android:layout_width="0dp"
+                        android:layout_weight=".5"
+                        android:layout_height="wrap_content"
+                        android:text="কিনুন"
+                        android:background="#E2000000"/>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </androidx.cardview.widget.CardView>
+</LinearLayout>
+
+
+
+
+
+
 
 </FrameLayout>

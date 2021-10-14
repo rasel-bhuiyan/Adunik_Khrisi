@@ -23,7 +23,7 @@ public class Dan_Chas extends AppCompatActivity {
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(Dan_Chas.this, "Danchasabad", Toast.LENGTH_SHORT).show();
+                Toast.makeText(Dan_Chas.this, "ধান চাষ", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(Dan_Chas.this,Dan_Chas.class);
                 startActivity(intent);
             }
@@ -32,7 +32,7 @@ public class Dan_Chas extends AppCompatActivity {
         btn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(Dan_Chas.this, "xxxxx", Toast.LENGTH_SHORT).show();
+                Toast.makeText(Dan_Chas.this, "রোগ বালাই", Toast.LENGTH_SHORT).show();
                 FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
                 transaction.replace(R.id.Dan_chas_layout,new Dan_rogbalais()).commit();
 
