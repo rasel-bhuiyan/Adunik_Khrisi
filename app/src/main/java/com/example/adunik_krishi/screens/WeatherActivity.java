@@ -57,8 +57,7 @@ public class WeatherActivity extends AppCompatActivity {
     private void getLocation() {
 
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && checkSelfPermission(Manifest.permission.ACCESS_COARSE_LOCATION)
-                != PackageManager.PERMISSION_DENIED) {
+        if (checkSelfPermission(Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_DENIED) {
             requestPermissions(new String[]{Manifest.permission.ACCESS_COARSE_LOCATION}, 100);
         } else {
 

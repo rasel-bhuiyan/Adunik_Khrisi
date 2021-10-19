@@ -29,7 +29,9 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.adunik_krishi.constant.Constant;
+import com.example.adunik_krishi.screens.BuyandSellActivity;
 import com.example.adunik_krishi.screens.QuestionAnswerActivity;
+import com.example.adunik_krishi.screens.WeatherActivity;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -49,7 +51,7 @@ public class Home extends Fragment implements View.OnClickListener {
     }
 
     TextView time_date,tempTV;
-    CardView chasabad, mosshoChas,questionAnswer;
+    CardView chasabad, mosshoChas,questionAnswer,kroibikroi;
     String city;
     DecimalFormat decimalFormat = new DecimalFormat("#.##");
 
@@ -71,10 +73,13 @@ public class Home extends Fragment implements View.OnClickListener {
         chasabad = HomeView.findViewById(R.id.H_chasabad);
         mosshoChas = HomeView.findViewById(R.id.h_fishChash);
         questionAnswer = HomeView.findViewById(R.id.questionAnswer);
+        kroibikroi = HomeView.findViewById(R.id.kroyBikroi);
 
         chasabad.setOnClickListener(this);
         mosshoChas.setOnClickListener(this);
         questionAnswer.setOnClickListener(this);
+        kroibikroi.setOnClickListener(this);
+        tempTV.setOnClickListener(this);
 
         getLocation();
 
@@ -228,6 +233,12 @@ public class Home extends Fragment implements View.OnClickListener {
                 break;
             case R.id.questionAnswer:
                 startActivity(new Intent(getContext(), QuestionAnswerActivity.class));
+                break;
+            case R.id.kroyBikroi:
+                startActivity(new Intent(getContext(), BuyandSellActivity.class));
+                break;
+            case R.id.tempTV:
+                startActivity(new Intent(getContext(), WeatherActivity.class));
                 break;
         }
 
