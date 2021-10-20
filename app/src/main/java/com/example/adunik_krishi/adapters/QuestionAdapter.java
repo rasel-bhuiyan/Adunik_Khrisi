@@ -1,6 +1,7 @@
 package com.example.adunik_krishi.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +13,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.adunik_krishi.R;
 import com.example.adunik_krishi.models.Question;
+import com.example.adunik_krishi.screens.ProductDetailsActivity;
+import com.example.adunik_krishi.screens.QuestionDetailsActivity;
 
 import java.util.List;
 
@@ -45,7 +48,11 @@ public class QuestionAdapter extends RecyclerView.Adapter<QuestionAdapter.ViewHo
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(context, "Clicked", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(context, QuestionDetailsActivity.class);
+                intent.putExtra("qID",question.getqID());
+                intent.putExtra("phoneNumber",question.getqPhone());
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                context.startActivity(intent);
             }
         });
     }

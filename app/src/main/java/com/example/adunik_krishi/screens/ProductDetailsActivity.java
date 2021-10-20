@@ -22,6 +22,7 @@ import com.example.adunik_krishi.R;
 import com.example.adunik_krishi.constant.Constant;
 import com.example.adunik_krishi.models.Product;
 import com.example.adunik_krishi.models.User;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -38,6 +39,7 @@ public class ProductDetailsActivity extends AppCompatActivity {
     private ProgressDialog loadingBar;
 
     private String productID,phone;
+
 
     private DatabaseReference databaseReference,userRef;
 

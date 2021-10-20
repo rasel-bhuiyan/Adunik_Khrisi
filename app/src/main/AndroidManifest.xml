@@ -20,6 +20,9 @@
         android:theme="@style/Theme.Adunik_Krishi"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".screens.QuestionDetailsActivity"
+            android:exported="true" />
+        <activity
             android:name=".screens.BuyandSellActivity"
             android:exported="true" />
         <activity
