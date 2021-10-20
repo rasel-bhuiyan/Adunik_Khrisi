@@ -54,6 +54,8 @@ public class ChasabadPoddoti extends AppCompatActivity implements View.OnClickLi
                 break;
                 case R.id.C_JuteChasahbad:
                 Toast.makeText(this, "under working", Toast.LENGTH_SHORT).show();
+                    Intent intentPatChas = new Intent(getApplicationContext(),Pat_Chas.class);
+                    startActivity(intentPatChas);
                 break;
             case R.id.C_MustardChash:
                 Toast.makeText(this, "under working", Toast.LENGTH_SHORT).show();

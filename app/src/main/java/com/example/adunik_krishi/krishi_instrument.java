@@ -26,4 +26,6 @@ public class krishi_instrument extends Fragment {
         View v = inflater.inflate(R.layout.fragment_krishi_instrument, container, false);
         return v;
     }
+
+   
 }

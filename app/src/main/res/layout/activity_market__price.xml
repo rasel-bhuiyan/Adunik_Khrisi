@@ -8,19 +8,21 @@
     android:orientation="vertical"
 
     tools:context=".Market_Price">
+
     <!-- this is toolbar -->
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:background="#1E36DA"
-        app:title="Bazar price"
+        app:title="আজকের বাজার দর"
         app:titleTextColor="#FFF9F9"></androidx.appcompat.widget.Toolbar>
 
-            <WebView
-                android:id="@+id/webViewPrice"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"></WebView>
+    <WebView
+        android:id="@+id/webViewPrice"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></WebView>
+
 
 
 </LinearLayout>

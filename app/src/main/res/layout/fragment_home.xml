@@ -17,17 +17,17 @@
         app:cardCornerRadius="2dp">
 
         <LinearLayout
-            android:gravity="center"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:gravity="center"
             android:orientation="horizontal">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical"
+                android:layout_weight="1"
                 android:gravity="center"
-                android:layout_weight="1">
+                android:orientation="vertical">
 
                 <TextView
                     android:id="@+id/tempTV"
@@ -36,7 +36,7 @@
                     android:text="আজকের তাপমাত্রাঃ"
                     android:textAlignment="center"
                     android:textColor="#000000"
-                    android:textSize="20sp"/>
+                    android:textSize="20sp" />
 
 
             </LinearLayout>
@@ -68,21 +68,20 @@
         android:layout_marginTop="70dp"
         android:paddingTop="10dp">
 
-<!--       outer layout 1st-->
+        <!--       outer layout 1st-->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-<!--            middle part-->
+            <!--            middle part-->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:background="#FBFBFB"
                 android:layout_marginBottom="10dp"
-                >
-<!--                1st row -->
+                android:background="#FBFBFB"
+                android:orientation="vertical">
+                <!--                1st row -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -98,8 +97,7 @@
                         android:layout_weight="1"
                         android:elevation="10dp"
                         app:cardBackgroundColor="#FCFDFD"
-                        app:cardCornerRadius="5dp"
-                       >
+                        app:cardCornerRadius="5dp">
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -120,9 +118,9 @@
                                 android:layout_weight=".80"
                                 android:gravity="center"
                                 android:text="ফসল চাষ পদ্বতি"
-                                android:textStyle="bold"
+                                android:textColor="@color/black"
                                 android:textSize="20sp"
-                                android:textColor="@color/black"></TextView>
+                                android:textStyle="bold"></TextView>
 
                         </LinearLayout>
 
@@ -159,9 +157,9 @@
                                 android:layout_weight=".80"
                                 android:gravity="center"
                                 android:text="মৎস্য চাষ"
-                                android:textStyle="bold"
+                                android:textColor="@color/black"
                                 android:textSize="20sp"
-                                android:textColor="@color/black"></TextView>
+                                android:textStyle="bold"></TextView>
 
                         </LinearLayout>
 
@@ -171,7 +169,7 @@
 
                 </LinearLayout>
 
-<!--                2nd row -->
+                <!--                2nd row -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -186,7 +184,7 @@
                         android:elevation="10dp"
                         app:cardBackgroundColor="#FCFDFD"
                         app:cardCornerRadius="5dp">
-                       >
+                        >
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -207,8 +205,8 @@
                                 android:layout_weight=".80"
                                 android:gravity="center"
                                 android:text="ক্রয়  বিক্রয়"
-                                android:textStyle="bold"
-                                android:textColor="@color/black"></TextView>
+                                android:textColor="@color/black"
+                                android:textStyle="bold"></TextView>
 
                         </LinearLayout>
 
@@ -244,8 +242,8 @@
                                 android:layout_weight=".80"
                                 android:gravity="center"
                                 android:text="কৃষি যন্ত্রপাতি"
-                                android:textStyle="bold"
-                                android:textColor="@color/black"></TextView>
+                                android:textColor="@color/black"
+                                android:textStyle="bold"></TextView>
 
                         </LinearLayout>
 
@@ -254,7 +252,7 @@
 
 
                 </LinearLayout>
-<!--                4rd row -->
+                <!--                4rd row -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -280,7 +278,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="160dp"
                                 android:layout_weight=".20"
-                                android:src="@drawable/qusandans"/>
+                                android:src="@drawable/qusandans" />
 
                             <TextView
                                 android:layout_width="match_parent"
@@ -288,8 +286,8 @@
                                 android:layout_weight=".80"
                                 android:gravity="center"
                                 android:text="প্রশ্ন ও উত্তর"
-                                android:textStyle="bold"
-                                android:textColor="@color/black"/>
+                                android:textColor="@color/black"
+                                android:textStyle="bold" />
 
                         </LinearLayout>
 
@@ -302,7 +300,7 @@
                         android:layout_margin="10dp"
                         android:layout_weight="1"
                         android:elevation="10dp"
-                        app:cardBackgroundColor="#DF8AD114"
+                        app:cardBackgroundColor="#FCFDFD"
                         app:cardCornerRadius="5dp">
 
                         <LinearLayout
@@ -314,16 +312,15 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:layout_weight=".20"
-                                android:src="@drawable/ic_launcher_background"
-
-                                ></ImageView>
+                                android:src="@drawable/img_buy_sell"></ImageView>
 
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:layout_weight=".80"
                                 android:gravity="center"
-                                android:text="This is Title"
+                                android:text="বাজর দর"
+                                android:textColor="@color/black"
                                 android:textStyle="bold"></TextView>
 
                         </LinearLayout>
@@ -335,12 +332,11 @@
                 </LinearLayout>
 
 
-
-
             </LinearLayout>
 
 
             //horizontal start
+
             <HorizontalScrollView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -530,7 +526,7 @@
                         </LinearLayout>
                     </androidx.cardview.widget.CardView>
 
-                // end horizontalscrollview
+                    // end horizontalscrollview
                 </LinearLayout>
             </HorizontalScrollView>
 

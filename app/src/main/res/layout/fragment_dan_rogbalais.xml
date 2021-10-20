@@ -124,15 +124,16 @@
 
 
 
-            <TextView
+            <Button
                 android:id="@+id/dan_rog_website"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="15dp"
-                android:text="আরো তথ্যের জন্য তথ্যের জন্য ক্লিক করুন  "
+                android:text="আরো তথ্যের জন্য এখানে  ক্লিক করুন  "
                 android:textSize="20sp"
                 android:textStyle="bold"
-                android:background="@color/green"></TextView>
+                android:background="@color/green"
+               ></Button>
 
 
 

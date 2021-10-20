@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ffffff"
+    android:background="#F4ECEC"
     android:orientation="vertical"
 
     tools:context=".FishCahsabad">
@@ -37,9 +37,9 @@
                 android:layout_height="match_parent"
                 android:layout_margin="10dp"
                 android:layout_weight="1"
-                android:elevation="10dp"
                 app:cardBackgroundColor="#FCFDFD"
-                app:cardCornerRadius="5dp">
+                app:cardCornerRadius="10dp"
+                app:cardElevation="40dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -76,9 +76,9 @@
                 android:layout_height="match_parent"
                 android:layout_margin="10dp"
                 android:layout_weight="1"
-                android:elevation="10dp"
-                app:cardBackgroundColor="#DFFFFFFF"
-                app:cardCornerRadius="5dp">
+                app:cardBackgroundColor="#FCFDFD"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="40dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -123,9 +123,9 @@
                 android:layout_height="match_parent"
                 android:layout_margin="10dp"
                 android:layout_weight="1"
-                android:elevation="10dp"
                 app:cardBackgroundColor="#FCFDFD"
-                app:cardCornerRadius="5dp">
+                app:cardCornerRadius="10dp"
+                app:cardElevation="40dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -162,9 +162,9 @@
                 android:layout_height="match_parent"
                 android:layout_margin="10dp"
                 android:layout_weight="1"
-                android:elevation="10dp"
-                app:cardBackgroundColor="#DFFFFFFF"
-                app:cardCornerRadius="5dp">
+                app:cardBackgroundColor="#FCFDFD"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="40dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -185,7 +185,7 @@
                         android:layout_height="match_parent"
                         android:layout_weight=".75"
                         android:gravity="center"
-                        android:text="পাঙ্গাস চাষ পদ্ধতি"
+                        android:text="পুকুর প্রস্তুতি"
                         android:textColor="@color/black"
                         android:textSize="20sp"
                         android:textStyle="bold"></TextView>
@@ -194,19 +194,6 @@
             </androidx.cardview.widget.CardView>
 
         </LinearLayout>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="35dp"
-            android:layout_marginTop="20dp"
-            android:text="পুকুর প্রস্তুতি"
-            android:textStyle="bold"
-            android:textSize="25sp"
-            android:textColor="@color/black"
-            android:background="@color/green"
-            android:gravity="center"
-
-            ></TextView>
 
 
     </LinearLayout>

@@ -67,7 +67,9 @@ public class MainActivity extends AppCompatActivity {
                         break;
 
                     case R.id.menu_chasabad:
-                        Toast.makeText(getApplicationContext(), "this is chasabad " , Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), " চাষাবাদ পদ্ধতি " , Toast.LENGTH_SHORT).show();
+                        Intent intentChasabad = new Intent(MainActivity.this,ChasabadPoddoti.class);
+                        startActivity(intentChasabad);
                         break;
                     case R.id.menu_market_products_price:
                         Intent intentMarketPrice = new Intent(getApplicationContext(),Market_Price.class);
