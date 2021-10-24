@@ -11,23 +11,26 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="#4CAF50"/>
+        android:background="@color/greenTool" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:layout_below="@id/toolbar"
-        android:padding="10dp"
+        android:id="@+id/questionRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/questionRecyclerView"/>
+        android:layout_below="@id/toolbar"
+        android:padding="10dp" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/floatingActionBTN"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/ic_baseline_add_24"
-        android:backgroundTint="#000"
-        android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
-        android:layout_margin="20dp"/>
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:backgroundTint="@color/green"
+        android:src="@drawable/ic_baseline_add_24" />
 
 </RelativeLayout>

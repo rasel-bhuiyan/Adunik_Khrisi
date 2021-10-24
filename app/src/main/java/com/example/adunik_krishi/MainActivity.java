@@ -42,7 +42,6 @@ public class MainActivity extends AppCompatActivity {
 
         getLocationPermission();
 
-
         // navigation Drawer
         nav = findViewById(R.id.nav_menu);
         drawerLayout = findViewById(R.id.drawer);

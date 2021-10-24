@@ -172,7 +172,7 @@ public class Home extends Fragment implements View.OnClickListener {
                     String description = jsonObjectWeather.getString("description");
                     JSONObject jsonObjectMain = jsonResponse.getJSONObject("main");
                     double temp = jsonObjectMain.getDouble("temp") - 273.15;
-                    tempTV.setText("আজকের তাপমাত্রাঃ \n" + decimalFormat.format(temp) + " °C");
+                    tempTV.setText(" তাপমাত্রাঃ \n" + decimalFormat.format(temp) + " °C");
 
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -238,6 +238,7 @@ public class Home extends Fragment implements View.OnClickListener {
                 startActivity(new Intent(getContext(), BuyandSellActivity.class));
                 break;
             case R.id.tempTV:
+                Toast.makeText(getContext(), "weather", Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(getContext(), WeatherActivity.class));
                 break;
         }

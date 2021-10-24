@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="center"
-    android:background="#EDE5C2"
+    android:background="#D4D6D3"
 
     android:orientation="vertical"
     tools:context=".ChasabadPoddoti">
@@ -16,7 +16,7 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:background="#1E36DA"
+        android:background="#E939B504"
         app:title="চাষাবাদ পদ্বতি"
         app:titleTextColor="#FFF9F9"></androidx.appcompat.widget.Toolbar>
 
@@ -32,7 +32,7 @@
             android:layout_height="match_parent"
             android:drawableEnd="@drawable/ic_baseline_search_24"
             android:gravity="center"
-            android:text="আপনার ফসল নির্বাচন করুন "
+            android:text="ফসল নির্বাচন করুন "
             android:textAlignment="center"
             android:textColor="#008C00"
             android:textSize="18sp"
@@ -73,7 +73,6 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:background="@drawable/gradient1"
                         android:orientation="vertical">
 
                         <de.hdodenhof.circleimageview.CircleImageView
@@ -91,7 +90,7 @@
                             android:layout_weight=".75"
                             android:gravity="center"
                             android:text="ধান চাষ"
-                            android:textColor="@color/black"
+                            android:textColor="@color/green"
                             android:textSize="20sp"
                             android:textStyle="bold" />
 
@@ -130,7 +129,7 @@
                             android:layout_weight=".75"
                             android:gravity="center"
                             android:text="গম চাষ"
-                            android:textColor="@color/black"
+                            android:textColor="@color/green"
                             android:textSize="20sp"
                             android:textStyle="bold"></TextView>
 
@@ -178,7 +177,7 @@
                             android:layout_weight=".75"
                             android:gravity="center"
                             android:text="আলু চাষ"
-                            android:textColor="@color/black"
+                            android:textColor="@color/green"
                             android:textSize="20sp"
                             android:textStyle="bold"></TextView>
 
@@ -217,7 +216,7 @@
                             android:layout_weight=".75"
                             android:gravity="center"
                             android:text="বেগুন চাষ"
-                            android:textColor="@color/black"
+                            android:textColor="@color/green"
                             android:textSize="20sp"
                             android:textStyle="bold"></TextView>
 
@@ -265,7 +264,7 @@
                             android:gravity="center"
                             android:text="পাট চাষ
 "
-                            android:textColor="@color/black"
+                            android:textColor="@color/green"
                             android:textSize="20sp"
                             android:textStyle="bold"></TextView>
 
@@ -304,7 +303,7 @@
                             android:layout_weight=".75"
                             android:gravity="center"
                             android:text="ভুট্টা চাষ "
-                            android:textColor="@color/black"
+                            android:textColor="@color/green"
                             android:textSize="20sp"
                             android:textStyle="bold"></TextView>
 
@@ -352,7 +351,7 @@
                             android:gravity="center"
                             android:text="সরিষা চাষ
 "
-                            android:textColor="@color/black"
+                            android:textColor="@color/green"
                             android:textSize="20sp"
                             android:textStyle="bold"></TextView>
 
@@ -392,7 +391,7 @@
                             android:layout_weight=".75"
                             android:gravity="center"
                             android:text="সয়াবিন চাষ "
-                            android:textColor="@color/black"
+                            android:textColor="@color/green"
                             android:textSize="20sp"
                             android:textStyle="bold"></TextView>
 

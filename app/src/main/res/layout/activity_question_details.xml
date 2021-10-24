@@ -7,6 +7,7 @@
     android:background="@color/white"
     tools:context=".screens.QuestionDetailsActivity">
 
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -21,7 +22,8 @@
             android:textColor="@color/black"
             android:textAlignment="center"
             android:textSize="20sp"
-            android:layout_marginBottom="20dp"/>
+            android:layout_marginBottom="20dp"
+            android:background="@color/greenTool"/>
 
         <ImageView
             android:id="@+id/question_imageView"
