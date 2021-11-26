@@ -21,6 +21,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.example.adunik_krishi.screens.BuyandSellActivity;
 import com.example.adunik_krishi.screens.LoginActivity;
 import com.example.adunik_krishi.screens.WeatherActivity;
 import com.google.android.material.navigation.NavigationView;
@@ -73,27 +74,15 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.menu_market_products_price:
                         Intent intentMarketPrice = new Intent(getApplicationContext(),Market_Price.class);
                         startActivity(intentMarketPrice);
-
                         break;
 
                     case R.id.menu_instrument:
-                        Toast.makeText(MainActivity.this, "call", Toast.LENGTH_SHORT).show();
-                        krishi_instrument krishi_instrument = new krishi_instrument();
-                        FragmentManager fm = getSupportFragmentManager();
-                        FragmentTransaction ft = fm.beginTransaction();
-                        ft.replace(R.id.mainActivityLayout,krishi_instrument,"krishi instrument");
-                        ft.commit();
-
+                        startActivity(new Intent(MainActivity.this, instroment.class));
                         drawerLayout.closeDrawer(GravityCompat.START);
                         break;
 
                     case R.id.menu_marketing:
-                        BazarJatKoron bazarJatKoron = new BazarJatKoron();
-                        FragmentManager fm2 = getSupportFragmentManager();
-                        FragmentTransaction ft2 = fm2.beginTransaction();
-                        ft2.replace(R.id.mainActivityLayout,bazarJatKoron,"bazarjatKoron");
-                        ft2.commit();
-                        drawerLayout.closeDrawer(GravityCompat.START);
+                        startActivity(new Intent(getApplicationContext(), BuyandSellActivity.class));
                         break;
 
                     case R.id.menu_weather:

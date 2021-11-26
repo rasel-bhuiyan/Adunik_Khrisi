@@ -17,6 +17,7 @@ public class Market_Price extends AppCompatActivity {
 
         webView = findViewById(R.id.webViewPrice);
 
+
         webView.getSettings().setJavaScriptEnabled(true);
         webView.getSettings().setLoadsImagesAutomatically(true);
         webView.getSettings().setLoadWithOverviewMode(true);
@@ -25,19 +26,17 @@ public class Market_Price extends AppCompatActivity {
         webView.getSettings().setBuiltInZoomControls(true);
 
         webView.loadUrl("http://www.dam.gov.bd/damweb/PublicPortal/MarketDisplayFullScreenBangla.php");
-     //  webView.setWebViewClient(new WebViewClient());
-
-
+        //  webView.setWebViewClient(new WebViewClient());
 
         String userAgent = webView.getSettings().getUserAgentString();
 
         try {
             String androidString = webView.getSettings().getUserAgentString().
-                    substring(userAgent.indexOf("("),userAgent.indexOf(")")+ 1);
+                    substring(userAgent.indexOf("("), userAgent.indexOf(")") + 1);
 
-            userAgent = webView.getSettings().getUserAgentString().replace(androidString,"X11; Linux x86_64");
+            userAgent = webView.getSettings().getUserAgentString().replace(androidString, "X11; Linux x86_64");
 
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
 

@@ -20,6 +20,12 @@
         android:theme="@style/Theme.Adunik_Krishi"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".Jute_Chas"
+            android:exported="false" />
+        <activity
+            android:name=".instroment"
+            android:exported="false" />
+        <activity
             android:name=".screens.QuestionDetailsActivity"
             android:exported="true" />
         <activity
@@ -50,7 +56,6 @@
         <activity
             android:name=".screens.LoginActivity"
             android:exported="true" />
-        <activity android:name=".text" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

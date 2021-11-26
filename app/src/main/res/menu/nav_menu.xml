@@ -21,10 +21,13 @@
             android:icon="@drawable/ic_instroment"
             android:title="কৃষি যন্ত্রপাতি" />
 
+        <!---
         <item
             android:id="@+id/menu_amr_foshol"
             android:icon="@drawable/chasabad"
             android:title="আমার ফসল" />
+            -->
+
         <item
             android:id="@+id/menu_marketing"
             android:icon="@drawable/marketing"

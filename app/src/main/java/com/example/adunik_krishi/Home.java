@@ -50,11 +50,10 @@ public class Home extends Fragment implements View.OnClickListener {
         // Required empty public constructor
     }
 
-    TextView time_date,tempTV;
-    CardView chasabad, mosshoChas,questionAnswer,kroibikroi;
+    TextView time_date, tempTV;
+    CardView chasabad, mosshoChas,instrometn, questionAnswer, kroibikroi, marketPrice;
     String city;
     DecimalFormat decimalFormat = new DecimalFormat("#.##");
-
 
 
     @Override
@@ -72,13 +71,17 @@ public class Home extends Fragment implements View.OnClickListener {
         //
         chasabad = HomeView.findViewById(R.id.H_chasabad);
         mosshoChas = HomeView.findViewById(R.id.h_fishChash);
+        instrometn = HomeView.findViewById(R.id.H_instroment);
         questionAnswer = HomeView.findViewById(R.id.questionAnswer);
         kroibikroi = HomeView.findViewById(R.id.kroyBikroi);
+        marketPrice = HomeView.findViewById(R.id.H_market_price);
 
         chasabad.setOnClickListener(this);
         mosshoChas.setOnClickListener(this);
+        instrometn.setOnClickListener(this);
         questionAnswer.setOnClickListener(this);
         kroibikroi.setOnClickListener(this);
+        marketPrice.setOnClickListener(this);
         tempTV.setOnClickListener(this);
 
         getLocation();
@@ -96,18 +99,16 @@ public class Home extends Fragment implements View.OnClickListener {
 
             LocationManager locationManager = (LocationManager) getActivity().getSystemService(Context.LOCATION_SERVICE);
             Location location = locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
-            try{
+            try {
                 String fullCity = getCityName(location.getLatitude(), location.getLongitude());
-                city = fullCity.substring(0,fullCity.indexOf(' '));
+                city = fullCity.substring(0, fullCity.indexOf(' '));
 
-                if(city.isEmpty()){
+                if (city.isEmpty()) {
                     getWeatherDetails("Savar");
-                }
-                else{
+                } else {
                     getWeatherDetails(city);
                 }
-            }
-            catch (Exception e){
+            } catch (Exception e) {
                 e.printStackTrace();
             }
 
@@ -129,20 +130,18 @@ public class Home extends Fragment implements View.OnClickListener {
                         return;
                     }
                     Location location = locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
-                    try{
+                    try {
                         String fullCity = getCityName(location.getLatitude(), location.getLongitude());
 
-                        city = fullCity.substring(0,fullCity.indexOf(' '));
+                        city = fullCity.substring(0, fullCity.indexOf(' '));
 
-                        if(city.isEmpty()){
+                        if (city.isEmpty()) {
                             getWeatherDetails("Savar");
-                        }
-                        else{
+                        } else {
                             getWeatherDetails(city);
                         }
 
-                    }
-                    catch (Exception e){
+                    } catch (Exception e) {
                         e.printStackTrace();
                     }
                 } else {
@@ -156,14 +155,14 @@ public class Home extends Fragment implements View.OnClickListener {
 
         String tempUrl = "";
 
-        tempUrl = Constant.WEATHER_API + "?q="+Mycity+"&appid="+Constant.WEATHER_API_KEY;
+        tempUrl = Constant.WEATHER_API + "?q=" + Mycity + "&appid=" + Constant.WEATHER_API_KEY;
 
         StringRequest stringRequest = new StringRequest(Request.Method.POST, tempUrl, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
 
 
-                Log.d("response",response);
+                Log.d("response", response);
 
                 try {
                     JSONObject jsonResponse = new JSONObject(response);
@@ -180,11 +179,11 @@ public class Home extends Fragment implements View.OnClickListener {
 
 
             }
-        },new Response.ErrorListener(){
+        }, new Response.ErrorListener() {
 
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(getActivity(), ""+error.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), "" + error.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -207,7 +206,7 @@ public class Home extends Fragment implements View.OnClickListener {
 
                     if (address.getLocality() != null && address.getLocality().length() > 0) {
                         cityName = address.getLocality();
-                        Log.d("after:",address.getLocality());
+                        Log.d("after:", address.getLocality());
                         break;
                     }
                 }
@@ -223,12 +222,11 @@ public class Home extends Fragment implements View.OnClickListener {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.H_chasabad:
-                Toast.makeText(getActivity(), "chasabad", Toast.LENGTH_SHORT).show();
-                Intent intentChasha = new Intent(getActivity().getApplication(),ChasabadPoddoti.class);
+                Intent intentChasha = new Intent(getActivity().getApplication(), ChasabadPoddoti.class);
                 startActivity(intentChasha);
                 break;
             case R.id.h_fishChash:
-                Intent intentFishchasabadPoddoti = new Intent(getActivity().getApplication(),FishCahsabad.class);
+                Intent intentFishchasabadPoddoti = new Intent(getActivity().getApplication(), FishCahsabad.class);
                 startActivity(intentFishchasabadPoddoti);
                 break;
             case R.id.questionAnswer:
@@ -237,15 +235,21 @@ public class Home extends Fragment implements View.OnClickListener {
             case R.id.kroyBikroi:
                 startActivity(new Intent(getContext(), BuyandSellActivity.class));
                 break;
+            case R.id.H_instroment:
+                startActivity(new Intent(getActivity(), instroment.class));
+
+                break;
+            case R.id.H_market_price:
+                Intent intentMarketPrice = new Intent(getContext(),Market_Price.class);
+                startActivity(intentMarketPrice);
+                break;
             case R.id.tempTV:
-                Toast.makeText(getContext(), "weather", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), "আবহাাওয়া", Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(getContext(), WeatherActivity.class));
                 break;
         }
 
     }
-
-
 
 
 }

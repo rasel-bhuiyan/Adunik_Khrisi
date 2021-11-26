@@ -9,7 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
 public class ChasabadPoddoti extends AppCompatActivity implements View.OnClickListener {
-    CardView danchash, wheathChash, potatoChas, eggChas,juteChhas,cornChas,musterdCahs;
+    CardView danchash, wheathChash, potatoChas, eggChas, juteChhas, cornChas, musterdCahs;
 
 
     @Override
@@ -52,10 +52,9 @@ public class ChasabadPoddoti extends AppCompatActivity implements View.OnClickLi
             case R.id.C_Eggplant:
                 Toast.makeText(this, "under working", Toast.LENGTH_SHORT).show();
                 break;
-                case R.id.C_JuteChasahbad:
-                Toast.makeText(this, "under working", Toast.LENGTH_SHORT).show();
-                    Intent intentPatChas = new Intent(getApplicationContext(),Pat_Chas.class);
-                    startActivity(intentPatChas);
+            case R.id.C_JuteChasahbad:
+                    Intent intent_pat = new Intent(getApplicationContext(),Jute_Chas.class);
+                    startActivity(intent_pat);
                 break;
             case R.id.C_MustardChash:
                 Toast.makeText(this, "under working", Toast.LENGTH_SHORT).show();

@@ -4,10 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Pat_Chas"
+    tools:context=".Jute_Chas"
 
     android:background="@color/white"
     android:orientation="vertical">
+
 
     <androidx.appcompat.widget.Toolbar
         android:layout_width="match_parent"
@@ -82,6 +83,7 @@
                 android:background="@color/green"
                 ></TextView>
 
+
             <TextView
                 android:paddingTop="10dp"
                 android:layout_width="match_parent"
@@ -90,7 +92,6 @@
                 android:textColor="@color/black"
                 android:padding="10dp"
                 ></TextView>
-
 
 
             <!-- end layout -->
