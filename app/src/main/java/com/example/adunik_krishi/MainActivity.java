@@ -21,17 +21,25 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.example.adunik_krishi.constant.Constant;
 import com.example.adunik_krishi.screens.BuyandSellActivity;
 import com.example.adunik_krishi.screens.LoginActivity;
+import com.example.adunik_krishi.screens.ProfileActivity;
 import com.example.adunik_krishi.screens.WeatherActivity;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.Objects;
 
 public class MainActivity extends AppCompatActivity {
 
     NavigationView nav;
     ActionBarDrawerToggle toggle;
     DrawerLayout drawerLayout;
+
+    private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +48,8 @@ public class MainActivity extends AppCompatActivity {
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        mAuth = FirebaseAuth.getInstance();
 
         getLocationPermission();
 
@@ -90,6 +100,26 @@ public class MainActivity extends AppCompatActivity {
                         drawerLayout.closeDrawer(GravityCompat.START);
                         break;
 
+                    case R.id.menu_profile:
+
+                        FirebaseUser currentUser = mAuth.getCurrentUser();
+
+                        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+                        boolean isLogin = preferences.getBoolean("isLogin",false);
+                        String phoneNumber2 = preferences.getString("phone", null);
+
+                        if (currentUser != null) {
+                            intentWithPhone(phoneNumber2);
+                        }
+                        else if (isLogin) {
+                            intentWithPhone(phoneNumber2);
+                        }
+                        else{
+                            startActivity(new Intent(MainActivity.this, LoginActivity.class));
+                        }
+                        drawerLayout.closeDrawer(GravityCompat.START);
+                        break;
+
                     case R.id.menu_setting:
                         Toast.makeText(MainActivity.this, "setting", Toast.LENGTH_SHORT).show();
                         drawerLayout.closeDrawer(GravityCompat.START);
@@ -107,6 +137,12 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    private void intentWithPhone(String phoneNumber2) {
+        Intent intent = new Intent(MainActivity.this, ProfileActivity.class);
+        intent.putExtra("phone",phoneNumber2);
+        startActivity(intent);
     }
 
     private void updateLoginInfo() {

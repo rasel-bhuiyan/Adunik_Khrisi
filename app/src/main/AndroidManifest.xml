@@ -20,6 +20,9 @@
         android:theme="@style/Theme.Adunik_Krishi"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".screens.ProfileActivity"
+            android:exported="true" />
+        <activity
             android:name=".Jute_Chas"
             android:exported="false" />
         <activity

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".screens.ProfileActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <ImageView
+            android:layout_marginTop="20dp"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:src="@drawable/ic_profile"
+            android:backgroundTint="@color/black"
+            android:background="@color/black"/>
+
+        <TextView
+            android:id="@+id/profileNameTV"
+            android:layout_marginTop="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Md. Al-Amin"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/profilePhoneNoTV"
+            android:layout_marginTop="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Phone: 01621893919"
+            android:textColor="#504E4E"
+            android:textSize="16sp"/>
+
+
+        <TextView
+            android:id="@+id/profileCityTV"
+            android:layout_marginTop="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="City: Gazipur"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="16sp"/>
+
+        <View
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#000"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Your Buy and Sell Posts"
+            android:textStyle="bold"
+            android:textColor="@color/black"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/buySellRecyclerView"/>
+
+        <View
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#000"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Your Question and Answers"
+            android:textStyle="bold"
+            android:textColor="@color/black"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/questionAndAnswersRecyclerView"/>
+
+    </LinearLayout>
+
+</ScrollView>
