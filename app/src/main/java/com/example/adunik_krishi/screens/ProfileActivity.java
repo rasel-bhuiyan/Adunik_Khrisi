@@ -2,6 +2,9 @@ package com.example.adunik_krishi.screens;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -11,7 +14,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.adunik_krishi.R;
+import com.example.adunik_krishi.adapters.ProductAdapter;
+import com.example.adunik_krishi.adapters.QuestionAdapter;
 import com.example.adunik_krishi.constant.Constant;
+import com.example.adunik_krishi.models.Product;
+import com.example.adunik_krishi.models.Question;
 import com.example.adunik_krishi.models.User;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -21,11 +28,22 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class ProfileActivity extends AppCompatActivity {
 
     private TextView nameTV,phoneNoTV,cityTV;
 
-    private DatabaseReference profileDataRef;
+    private RecyclerView questionRecyclerView,buySellRecyclerView;
+    private QuestionAdapter questionAdapter;
+    private ProductAdapter buySellAdapter;
+    private List<Question> questionList;
+    private List<Product> buySellList;
+
+    private String phone;
+
+    private DatabaseReference profileDataRef,questionDatabaseReference,buySellDatabaseReference;
 
 
     @Override
@@ -36,6 +54,61 @@ public class ProfileActivity extends AppCompatActivity {
         initialize();
 
         getProfileData();
+
+        loadQuestionData();
+
+        loadBuySellData();
+    }
+
+    private void loadBuySellData() {
+
+        buySellDatabaseReference.orderByChild("pPhone").equalTo(phone).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if(snapshot.exists()){
+
+                    buySellList.clear();
+
+                    for(DataSnapshot dataSnapshot : snapshot.getChildren()){
+                        Product product = dataSnapshot.getValue(Product.class);
+                        buySellList.add(product);
+
+                        buySellAdapter.notifyDataSetChanged();
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
+
+    private void loadQuestionData() {
+
+
+        questionDatabaseReference.orderByChild("qPhone").equalTo(phone).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if(snapshot.exists()){
+
+                    questionList.clear();
+
+                    for(DataSnapshot dataSnapshot : snapshot.getChildren()){
+                        Question question = dataSnapshot.getValue(Question.class);
+                        questionList.add(question);
+
+                        questionAdapter.notifyDataSetChanged();
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
     }
 
     private void getProfileData() {
@@ -65,9 +138,23 @@ public class ProfileActivity extends AppCompatActivity {
         phoneNoTV = findViewById(R.id.profilePhoneNoTV);
         cityTV = findViewById(R.id.profileCityTV);
 
-        String phone = getIntent().getStringExtra("phone");
+        questionRecyclerView = findViewById(R.id.questionAndAnswersRecyclerView);
+        questionRecyclerView.setLayoutManager(new GridLayoutManager(this,2));
+        questionList = new ArrayList<>();
+        questionAdapter = new QuestionAdapter(questionList,this);
+        questionRecyclerView.setAdapter(questionAdapter);
+
+        buySellRecyclerView = findViewById(R.id.buySellRecyclerView);
+        buySellRecyclerView.setLayoutManager(new GridLayoutManager(this,2));
+        buySellList = new ArrayList<>();
+        buySellAdapter = new ProductAdapter(buySellList,this);
+        buySellRecyclerView.setAdapter(buySellAdapter);
+
+        phone = getIntent().getStringExtra("phone");
 
         profileDataRef = FirebaseDatabase.getInstance(Constant.DATABASE_REFERENCE).getReference("users").child(phone);
+        questionDatabaseReference = FirebaseDatabase.getInstance(Constant.DATABASE_REFERENCE).getReference("questions");
+        buySellDatabaseReference = FirebaseDatabase.getInstance(Constant.DATABASE_REFERENCE).getReference("products");
 
 
 
