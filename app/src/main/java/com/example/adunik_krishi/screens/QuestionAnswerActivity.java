@@ -121,7 +121,7 @@ public class QuestionAnswerActivity extends AppCompatActivity {
         loadingBar = new ProgressDialog(this);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         questionList = new ArrayList<>();
-        questionAdapter = new QuestionAdapter(questionList,getApplicationContext());
+        questionAdapter = new QuestionAdapter(questionList,getApplicationContext(),0);
         recyclerView.setAdapter(questionAdapter);
 
         mAuth = FirebaseAuth.getInstance();

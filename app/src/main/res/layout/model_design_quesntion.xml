@@ -51,7 +51,6 @@
                 android:textSize="18sp"
                 android:textStyle="bold"
                 android:textColor="@color/black" />
-
             <TextView
                 android:id="@+id/model_question_detailsTV"
                 android:layout_marginTop="5dp"
@@ -70,6 +69,30 @@
                 android:textColor="#9C9A9A"
                 android:textSize="12sp"
                 android:drawableEnd="@drawable/ic_baseline_arrow_forward_ios_24"/>
+
+            <LinearLayout
+                android:layout_marginTop="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/model_editIV"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight=".5"
+                    android:src="@drawable/ic_baseline_edit_24"/>
+
+                <ImageView
+                    android:id="@+id/model_deleteIV"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight=".5"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_baseline_delete_24"/>
+
+
+            </LinearLayout>
 
 
         </LinearLayout>

@@ -120,7 +120,7 @@ public class BuyandSellActivity extends AppCompatActivity {
         loadingBar = new ProgressDialog(this);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         productList = new ArrayList<>();
-        adapter = new ProductAdapter(productList,this);
+        adapter = new ProductAdapter(productList,this,0);
         recyclerView.setAdapter(adapter);
 
         Loading();

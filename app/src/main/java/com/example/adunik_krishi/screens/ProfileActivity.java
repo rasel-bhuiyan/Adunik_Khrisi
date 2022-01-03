@@ -113,7 +113,7 @@ public class ProfileActivity extends AppCompatActivity {
 
     private void getProfileData() {
 
-        profileDataRef.addListenerForSingleValueEvent(new ValueEventListener() {
+        profileDataRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if(snapshot.exists()){
@@ -139,15 +139,15 @@ public class ProfileActivity extends AppCompatActivity {
         cityTV = findViewById(R.id.profileCityTV);
 
         questionRecyclerView = findViewById(R.id.questionAndAnswersRecyclerView);
-        questionRecyclerView.setLayoutManager(new GridLayoutManager(this,2));
+        questionRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         questionList = new ArrayList<>();
-        questionAdapter = new QuestionAdapter(questionList,this);
+        questionAdapter = new QuestionAdapter(questionList,this,1);
         questionRecyclerView.setAdapter(questionAdapter);
 
         buySellRecyclerView = findViewById(R.id.buySellRecyclerView);
-        buySellRecyclerView.setLayoutManager(new GridLayoutManager(this,2));
+        buySellRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         buySellList = new ArrayList<>();
-        buySellAdapter = new ProductAdapter(buySellList,this);
+        buySellAdapter = new ProductAdapter(buySellList,this,1);
         buySellRecyclerView.setAdapter(buySellAdapter);
 
         phone = getIntent().getStringExtra("phone");

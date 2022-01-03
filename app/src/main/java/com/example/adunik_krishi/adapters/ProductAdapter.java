@@ -1,5 +1,6 @@
 package com.example.adunik_krishi.adapters;
 
+import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
@@ -20,6 +21,7 @@ import com.example.adunik_krishi.R;
 import com.example.adunik_krishi.constant.Constant;
 import com.example.adunik_krishi.models.Product;
 import com.example.adunik_krishi.screens.ProductDetailsActivity;
+import com.example.adunik_krishi.screens.ProfileActivity;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -33,12 +35,14 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
 
     List<Product> products;
     Context context;
+    int id;
 
     DatabaseReference databaseReference;
 
-    public ProductAdapter(List<Product> products, Context context) {
+    public ProductAdapter(List<Product> products, Context context, int id) {
         this.products = products;
         this.context = context;
+        this.id = id;
     }
 
     @NonNull
@@ -58,6 +62,32 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
         holder.product_detailsTV.setText(product.getpDetails());
         holder.product_priceTV.setText("দাম - "+product.getpAmount());
         Glide.with(context).load(product.getpImage()).into(holder.product_imageView);
+
+        if(id == 0){
+            holder.deleteIV.setVisibility(View.GONE);
+            holder.editIV.setVisibility(View.GONE);
+        }
+        else {
+            holder.deleteIV.setVisibility(View.VISIBLE);
+            holder.editIV.setVisibility(View.VISIBLE);
+        }
+
+        holder.deleteIV.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                new AlertDialog.Builder(context)
+                        .setTitle("Warning!!!")
+                        .setMessage("আপনি কি এই পণ্যটি ডিলিট করতে চান ?")
+                        .setPositiveButton("হ্যা", (dialog, which) -> {
+                            DatabaseReference mPostReference = FirebaseDatabase.getInstance(Constant.DATABASE_REFERENCE).getReference().child("products").child(product.getpID());
+                            mPostReference.removeValue();
+                            notifyDataSetChanged();
+                        })
+                        .setNegativeButton("না", null)
+                        .setIcon(R.drawable.ic_baseline_warning_24)
+                        .show();
+            }
+        });
 
         databaseReference = FirebaseDatabase.getInstance(Constant.DATABASE_REFERENCE).getReference("users").child(product.getpPhone()).child("name");
 
@@ -106,6 +136,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
         TextView product_nameTV,product_detailsTV,product_priceTV,product_ownerTV;
         ImageView product_imageView;
         Button product_buyBTN;
+        ImageView editIV,deleteIV;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
@@ -115,6 +146,8 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
             product_ownerTV = itemView.findViewById(R.id.model_product_ownerTV);
             product_imageView = itemView.findViewById(R.id.model_product_imageView);
             product_buyBTN = itemView.findViewById(R.id.model_productBuyBTN);
+            editIV = itemView.findViewById(R.id.model_editIV);
+            deleteIV = itemView.findViewById(R.id.model_deleteIV);
         }
     }
 }
