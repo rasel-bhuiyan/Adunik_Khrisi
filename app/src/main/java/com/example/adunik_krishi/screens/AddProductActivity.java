@@ -1,10 +1,5 @@
 package com.example.adunik_krishi.screens;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.ContextCompat;
-
 import android.Manifest;
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -14,6 +9,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -25,17 +21,27 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
+
+import com.bumptech.glide.Glide;
+import com.example.adunik_krishi.MainActivity;
 import com.example.adunik_krishi.R;
 import com.example.adunik_krishi.constant.Constant;
+import com.example.adunik_krishi.models.Product;
 import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
@@ -55,6 +61,10 @@ public class AddProductActivity extends AppCompatActivity {
     private Bitmap bitmapPicture = null;
     private String pName,pQuantity,pDetails,pAmount,downloadImageURL = "";
 
+    private String productID;
+    String productIDValue;
+    Boolean isUpdateData = false,isImgRemove = false;
+
     private FirebaseStorage firebaseStorage;
     private StorageReference storageReference;
     private DatabaseReference databaseReference;
@@ -66,6 +76,8 @@ public class AddProductActivity extends AppCompatActivity {
 
         initialize();
 
+        getIntentData();
+
         getPermission();
 
         addProductImage();
@@ -73,6 +85,47 @@ public class AddProductActivity extends AppCompatActivity {
         deleteProductImage();
 
         addProduct();
+    }
+
+    private void getIntentData() {
+
+        productID = getIntent().getStringExtra("productID");
+
+        if(productID != null){
+
+          databaseReference.child(productID).addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    if(snapshot.exists()){
+
+                        Product product = snapshot.getValue(Product.class);
+
+                        product_nameET.setText(product.getpName());
+                        product_detailsET.setText(product.getpDetails());
+                        product_amountET.setText(product.getpAmount());
+                        product_quantityET.setText(product.getpQuantity());
+                        Glide.with(getApplicationContext()).load(product.getpImage()).into(product_imageView);
+                        product_imageShow.setVisibility(View.VISIBLE);
+                        isUpdateData = true;
+                    }
+                    else {
+                        Toast.makeText(getApplicationContext(), "কিছু সমস্যা এর জন্য পণ্য এর তথ্য লোড হয় নি ।", Toast.LENGTH_SHORT).show();
+                        product_imageShow.setVisibility(View.INVISIBLE);
+                        isUpdateData = false;
+                    }
+
+                }
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+                    Toast.makeText(getApplicationContext(), "কিছু সমস্যা এর জন্য পণ্য এর তথ্য লোড হয় নি ।", Toast.LENGTH_SHORT).show();
+                    product_imageShow.setVisibility(View.INVISIBLE);
+                    isUpdateData = false;
+                }
+            });
+        }
+        else{
+            isUpdateData = false;
+        }
     }
 
     private void getPermission() {
@@ -96,6 +149,19 @@ public class AddProductActivity extends AppCompatActivity {
                 pDetails = product_detailsET.getText().toString();
                 pQuantity = product_quantityET.getText().toString();
                 pAmount = product_amountET.getText().toString();
+
+                if(isUpdateData){
+                    productIDValue = productID;
+                    if(isImgRemove){
+                        bitmapPicture = null;
+                    }else {
+                        BitmapDrawable drawable = (BitmapDrawable) product_imageView.getDrawable();
+                        bitmapPicture = drawable.getBitmap();
+                    }
+                }
+                else {
+                    productIDValue = UUID.randomUUID().toString();
+                }
 
                 if(pName.isEmpty()){
                     Toast.makeText(getApplicationContext(), "আপনার Product এর নাম দিন", Toast.LENGTH_SHORT).show();
@@ -126,7 +192,8 @@ public class AddProductActivity extends AppCompatActivity {
         loadingBar.setVisibility(View.VISIBLE);
         product_addBTN.setVisibility(View.INVISIBLE);
 
-        StorageReference imageRef = storageReference.child("images" + UUID.randomUUID() + ".jpg");
+
+        StorageReference imageRef = storageReference.child(productIDValue + ".jpg");
 
         Uri imageUri = getImageUri(getApplicationContext(), bitmapPicture);
 
@@ -183,12 +250,10 @@ public class AddProductActivity extends AppCompatActivity {
 
     private void updateDatabase(String phoneNumber) {
 
-        String randomValue = UUID.randomUUID().toString();
-
-        DatabaseReference productRef = databaseReference.child(randomValue);
+        DatabaseReference productRef = databaseReference.child(productIDValue);
 
         HashMap<String,Object> productMap = new HashMap<>();
-        productMap.put("pID",randomValue);
+        productMap.put("pID",productIDValue);
         productMap.put("pName",pName);
         productMap.put("pDetails",pDetails);
         productMap.put("pQuantity",pQuantity);
@@ -201,8 +266,16 @@ public class AddProductActivity extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                 if(task.isSuccessful()){
-                    Toast.makeText(getApplicationContext(), "আপনার Product সফলভাবে যুক্ত করা হয়েছে ।", Toast.LENGTH_SHORT).show();
-                    onBackPressed();
+                    if(isUpdateData){
+                        Toast.makeText(getApplicationContext(), "আপনার Product সফলভাবে আপডেট করা হয়েছে ।", Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(AddProductActivity.this, MainActivity.class));
+                        finish();
+                    }else{
+                        Toast.makeText(getApplicationContext(), "আপনার Product সফলভাবে যুক্ত করা হয়েছে ।", Toast.LENGTH_SHORT).show();
+                        onBackPressed();
+                    }
+
+
                 }
             }
         }).addOnFailureListener(new OnFailureListener() {
@@ -232,6 +305,13 @@ public class AddProductActivity extends AppCompatActivity {
                 bitmapPicture = null;
                 product_imageView.setImageResource(R.drawable.ic_baseline_image_24);
                 product_imageShow.setVisibility(View.INVISIBLE);
+
+                if(isUpdateData){
+                    isImgRemove = true;
+                }
+                else{
+                    isImgRemove = false;
+                }
             }
         });
 
@@ -287,6 +367,7 @@ public class AddProductActivity extends AppCompatActivity {
                 bitmapPicture = (Bitmap) bundle.get("data");
                 product_imageView.setImageBitmap(bitmapPicture);
                 product_imageShow.setVisibility(View.VISIBLE);
+                isImgRemove = false;
             } else if (requestCode == 1) {
                 Uri uri = data.getData();
                 try {
@@ -296,12 +377,14 @@ public class AddProductActivity extends AppCompatActivity {
                 }
                 product_imageView.setImageBitmap(bitmapPicture);
                 product_imageShow.setVisibility(View.VISIBLE);
+                isImgRemove = false;
             }
         }
 
     }
 
     private void initialize() {
+
         product_nameET = findViewById(R.id.product_nameET);
         product_quantityET = findViewById(R.id.product_quantityTV);
         product_detailsET = findViewById(R.id.product_detailsTV);
